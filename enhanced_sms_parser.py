@@ -12,6 +12,7 @@ from sms_parser import Transaction
 from typing import Dict, Any, Optional, Tuple, List
 from pydantic import BaseModel, Field
 import datetime
+from langchain_wrapper import ask_gemini, parse_json_response, extract_structured_data
 
 # Load environment variables
 load_dotenv()
@@ -41,86 +42,9 @@ class EnhancedTransaction(BaseModel):
     category: str = Field("Uncategorized", description="Merchant category")
     confidence_score: float = Field(1.0, description="Confidence in transaction extraction")
 
-def parse_json_response(response_text: str) -> Dict[str, Any]:
-    """
-    Clean and parse JSON response from Gemini API
-    
-    Args:
-        response_text: Raw text response from Gemini API
-        
-    Returns:
-        Parsed JSON dictionary or empty dict on error
-    """
-    try:
-        # Remove markdown code blocks (```json and ```)
-        cleaned_text = re.sub(r'```(?:json)?\s*|\s*```', '', response_text)
-        
-        # Strip any extraneous text before the first { and after the last }
-        json_start = cleaned_text.find('{')
-        json_end = cleaned_text.rfind('}')
-        
-        if json_start >= 0 and json_end >= 0:
-            # Extract just the JSON portion
-            json_text = cleaned_text[json_start:json_end+1]
-            # Parse the JSON
-            return json.loads(json_text)
-        else:
-            print("[!] No valid JSON found in response")
-            return {}
-    except json.JSONDecodeError as e:
-        print(f"[!] JSON parsing error: {e}")
-        print(f"Raw text: {response_text}")
-        return {}
-    except Exception as e:
-        print(f"[!] Error parsing response: {e}")
-        return {}
-
-def ask_gemini(prompt_text: str, retries=3, delay=5) -> str:
-    """
-    Call Gemini API with a prompt and return the response, with retry logic
-    
-    Args:
-        prompt_text: The prompt to send to Gemini
-        retries: Number of retry attempts for rate-limit errors
-        delay: Delay in seconds between retries
-        
-    Returns:
-        The response text from Gemini
-    """
-    last_error = None
-    
-    for attempt in range(retries):
-        try:
-            # Ensure API key is configured
-            if not GEMINI_API_KEY:
-                raise ValueError("GEMINI_API_KEY not configured")
-            
-            # Call Gemini API with correct model name format
-            model = genai.GenerativeModel(model_name="models/gemini-1.5-pro")
-            response = model.generate_content(prompt_text)
-            
-            # Return the text response
-            return response.text.strip()
-        except Exception as e:
-            last_error = e
-            if "429" in str(e):
-                # Rate limit error, retry after delay
-                print(f"[!] Quota exceeded. Retrying in {delay} sec... (Attempt {attempt+1}/{retries})")
-                time.sleep(delay)
-            else:
-                # Other error, break out of retry loop
-                print("[!] Error calling Gemini API:", e)
-                break
-    
-    # If we get here, all retries failed or we had a non-rate-limit error
-    return json.dumps({
-        "error": "Failed to call Gemini API",
-        "message": str(last_error)
-    })
-
 def parse_sms(sms_text: str) -> Dict[str, Any]:
     """
-    Parse SMS text using Gemini API
+    Parse SMS text using LangChain
     
     Args:
         sms_text: SMS text containing transaction information
@@ -128,7 +52,7 @@ def parse_sms(sms_text: str) -> Dict[str, Any]:
     Returns:
         Dictionary with extracted transaction details
     """
-    # Format the prompt for Gemini
+    # Format the prompt for LangChain
     prompt_text = f"""
 Extract the following fields from this SMS:
 - transaction_type (credit, debit, refund, failed)
@@ -149,15 +73,34 @@ Respond in this exact JSON format:
 SMS: "{sms_text}"
 """
     
-    # Call Gemini API
-    llm_response = ask_gemini(prompt_text)
+    # Define the expected schema for structured extraction
+    schema = {
+        "type": "object",
+        "properties": {
+            "transaction_type": {"type": "string"},
+            "amount": {"type": "number"},
+            "merchant_name": {"type": "string"},
+            "account_masked": {"type": "string"},
+            "date": {"type": "string"}
+        }
+    }
     
-    # Print raw response for verification
-    print("Raw Gemini API response:")
-    print(llm_response)
-    
-    # Use the new utility function to parse JSON response
-    parsed_data = parse_json_response(llm_response)
+    # Try using structured extraction first
+    try:
+        parsed_data = extract_structured_data(prompt_text, schema)
+        # Print raw response for verification
+        print("Extracted structured data using LangChain")
+    except Exception as e:
+        # Fall back to regular ask_gemini and manual parsing
+        print(f"Structured extraction failed: {e}. Falling back to standard method.")
+        llm_response = ask_gemini(prompt_text)
+        
+        # Print raw response for verification
+        print("Raw LangChain response:")
+        print(llm_response)
+        
+        # Use the wrapper's parse_json_response function
+        parsed_data = parse_json_response(llm_response)
     
     # Check for None merchant_name and replace with empty string
     if parsed_data.get("merchant_name") is None:
@@ -213,7 +156,7 @@ def classify_archetype(summary: Dict[str, int]) -> str:
     # Format the spending summary for the prompt
     formatted_summary = "\n".join([f"{category}: ₹{amount:,}" for category, amount in summary.items()])
     
-    # Create the prompt for Gemini
+    # Create the prompt for LangChain
     prompt_text = f"""
 Based on the user's spending summary:
 {formatted_summary}
@@ -231,7 +174,7 @@ Classify the user into one of the following financial archetypes:
 Respond only with the archetype name and one short reason.
 """
     
-    # Call Gemini API
+    # Call LangChain via our wrapper
     response = ask_gemini(prompt_text)
     
     # Return the archetype and reasoning
@@ -241,7 +184,7 @@ def get_top_3_recommendations(user_query: str, user_archetype: str,
                              financial_summary: Dict[str, float], 
                              product_list: List[Dict[str, Any]]) -> str:
     """
-    Format a prompt for Gemini API and get top 3 product recommendations
+    Format a prompt for LangChain and get top 3 product recommendations
     
     Args:
         user_query: User's question about financial products
@@ -250,7 +193,7 @@ def get_top_3_recommendations(user_query: str, user_archetype: str,
         product_list: List of 6 product dictionaries from search results
         
     Returns:
-        String response from Gemini with top 3 recommendations
+        String response from LangChain with top 3 recommendations
     """
     # Format financial summary as JSON
     financial_summary_formatted = json.dumps(financial_summary, indent=2)
@@ -282,7 +225,7 @@ User Question:
 Please recommend the best 3 products from the list above based on the user's profile and financial needs. Respond with 3 product names and a short explanation for each.
 """
     
-    # Call Gemini API
+    # Call LangChain via our wrapper
     response = ask_gemini(prompt_text)
     
     return response.strip()
@@ -402,7 +345,7 @@ related to the question.
 Format your response in a conversational tone, and keep it under 300 words.
 """
     
-    # Call Gemini API
+    # Call LangChain via our wrapper
     response = ask_gemini(prompt_text)
     
     return response.strip()
@@ -627,7 +570,7 @@ Include specific advice that relates to their spending patterns and financial ar
 Keep your response conversational and under 300 words.
 """
         
-        # Call Gemini API for personalized response
+        # Call LangChain via our wrapper for personalized response
         response = ask_gemini(prompt_text)
         
         return {

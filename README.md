@@ -10,14 +10,17 @@ A complete system for parsing financial SMS messages, extracting transaction det
 - **Product Recommendations**: Provide personalized credit card recommendations based on spending
 - **Multiple Interfaces**: CLI, API, and Web UI
 - **Analytics**: Track user interactions and gather insights
+- **LangChain Integration**: Optional LangChain-powered workflows for enhanced capabilities
 
 ## System Architecture
 
 - **Enhanced SMS Parser**: Core processing engine powered by Gemini AI
+- **LangChain Integration**: Optional structured processing workflows using LangChain
 - **SQLite Database**: Persistent storage for transactions and analytics
 - **FastAPI Server**: RESTful API for integration
 - **CLI Tool**: Command-line interface for batch processing
 - **Web Frontend**: User-friendly interface for interaction
+- **Background Service**: Real-time SMS monitoring and processing
 
 ## Setup
 
@@ -63,6 +66,16 @@ Process multiple SMS from a file:
 python cli.py -f path/to/sms_file.txt -o results.json
 ```
 
+Check account balances:
+```
+python cli.py -b
+```
+
+View financial insights:
+```
+python cli.py -i
+```
+
 ### API Server
 
 Start the API server:
@@ -77,6 +90,12 @@ The server will run at `http://localhost:8000` with the following endpoints:
 - `GET /recommendations`: Get product recommendations
 - `GET /transactions`: Get recent transactions
 - `GET /analytics`: Get analytics data
+- `GET /balance`: Get account balances
+- `POST /question`: Process financial questions
+- `POST /background/enqueue`: Add SMS to background processing queue
+- `GET /background/status`: Get background service status
+- `POST /background/start`: Start background service
+- `POST /background/stop`: Stop background service
 
 Interactive API documentation available at `http://localhost:8000/docs`
 
@@ -87,16 +106,47 @@ Interactive API documentation available at `http://localhost:8000/docs`
    python api.py
    ```
 
-2. Open `frontend/index.html` in your browser
+2. Open `frontend/chat.html` in your browser for the interactive chat interface
 
 ## Components
 
 - `enhanced_sms_parser.py`: Core engine for SMS parsing and enhancement
+- `langchain_wrapper.py`: LangChain integration for structured data extraction
 - `db.py`: Database utilities for SQLite
 - `cli.py`: Command-line interface
 - `api.py`: FastAPI server
+- `background_service.py`: Real-time SMS monitoring service
 - `frontend/`: Web interface files
 - `services/`: Supporting services (merchant mapping, transaction type detection, etc.)
+
+## LangChain Integration
+
+The system now supports LangChain integration for enhanced capabilities:
+
+```python
+# Using the LangChain wrapper
+from langchain_wrapper import ask_gemini, extract_structured_data
+
+# Simple query with LangChain
+response = ask_gemini("What's the best credit card for travel?")
+
+# Structured data extraction
+schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "age": {"type": "number"}
+    }
+}
+data = extract_structured_data("John Doe is 30 years old", schema)
+```
+
+To test the LangChain integration:
+```
+python test_langchain.py
+```
+
+The integration maintains the same outputs and behavior as the direct Gemini API implementation while adding structured extraction capabilities.
 
 ## Analytics
 
