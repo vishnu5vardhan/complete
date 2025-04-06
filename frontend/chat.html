@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance AI Chat</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for reactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    
+    <style>
+        [x-cloak] { display: none !important; }
+        
+        .message {
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .user-message {
+            background-color: #e9f5ff;
+            border-radius: 18px 18px 0 18px;
+        }
+        
+        .ai-message {
+            background-color: #f0f0f0;
+            border-radius: 18px 18px 18px 0;
+        }
+
+        /* Add simple animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .message {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        
+        .data-indicator {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 6px;
+        }
+        
+        .data-sufficient {
+            background-color: #d1fae5;
+            color: #047857;
+        }
+        
+        .data-insufficient {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+        
+        .typing-indicator span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #888;
+            border-radius: 50%;
+            margin: 0 2px;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes bounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-4px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div x-data="chatApp()" x-cloak class="flex flex-col h-screen">
+        <!-- Header -->
+        <header class="bg-blue-600 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold">Finance AI Chat</h1>
+                        <p class="text-blue-100 text-sm">Ask questions about your finances</p>
+                    </div>
+                    <a href="index.html" class="text-white hover:underline">Back to Dashboard</a>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-6 flex-grow flex flex-col">
+            <!-- Chat Window -->
+            <div class="bg-white rounded-lg shadow-md p-4 flex-grow flex flex-col overflow-hidden">
+                <!-- Mode Toggle and Background Service Control -->
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex items-center">
+                        <button 
+                            @click="displayMode = 'chat'" 
+                            class="px-3 py-1 rounded transition-colors"
+                            :class="displayMode === 'chat' ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'"
+                        >
+                            Chat
+                        </button>
+                        <button 
+                            @click="displayMode = 'monitor'" 
+                            class="px-3 py-1 rounded ml-2 transition-colors"
+                            :class="displayMode === 'monitor' ? 'bg-blue-100 text-blue-800' : 'bg-gray-100 text-gray-800'"
+                        >
+                            SMS Monitor
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <span class="text-sm text-gray-500 mr-3">
+                            Background Service: 
+                            <span x-text="serviceRunning ? 'Running' : 'Stopped'" 
+                                  :class="serviceRunning ? 'text-green-600' : 'text-red-600'"
+                            ></span>
+                        </span>
+                        <button 
+                            @click="toggleBackgroundService()" 
+                            class="px-3 py-1 rounded text-white text-sm transition-colors"
+                            :class="serviceRunning ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600'"
+                        >
+                            <span x-text="serviceRunning ? 'Stop' : 'Start'"></span> Service
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Messages Display -->
+                <div class="flex-grow overflow-y-auto mb-4 p-2" id="chat-messages">
+                    <div class="space-y-4">
+                        <template x-for="(message, index) in messages" :key="index">
+                            <div class="flex" :class="{'justify-end': message.role === 'user', 'justify-start': message.role === 'ai'}">
+                                <div class="message p-3 my-1" 
+                                     :class="{'user-message': message.role === 'user', 'ai-message': message.role === 'ai'}">
+                                    <div class="flex items-center">
+                                        <div class="text-sm text-gray-600" x-text="message.role === 'user' ? 'You' : 'Finance AI'"></div>
+                                        <template x-if="message.role === 'ai' && message.dataSufficient !== undefined">
+                                            <span class="data-indicator" :class="message.dataSufficient ? 'data-sufficient' : 'data-insufficient'">
+                                                <span x-text="message.dataSufficient ? 'Personalized' : 'Limited Data'"></span>
+                                            </span>
+                                        </template>
+                                    </div>
+                                    <div x-html="formatMessage(message.content)" class="mt-1"></div>
+                                </div>
+                            </div>
+                        </template>
+                        
+                        <!-- Loading indicator -->
+                        <div x-show="isLoading" class="flex justify-start">
+                            <div class="message ai-message p-3 my-1">
+                                <div class="text-sm text-gray-600 mb-1">Finance AI</div>
+                                <div class="typing-indicator mt-2">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monitor Panel -->
+                <div x-show="displayMode === 'monitor'" class="border-t pt-4 mb-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-medium mb-3">SMS Processing Monitor</h3>
+                        
+                        <div class="grid grid-cols-3 gap-4 mb-4">
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <div class="text-sm text-gray-500">Queue Size</div>
+                                <div class="text-2xl font-bold text-blue-600" x-text="queueStatus.queue_size"></div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <div class="text-sm text-gray-500">Processed SMS</div>
+                                <div class="text-2xl font-bold text-green-600" x-text="queueStatus.processed_count"></div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm">
+                                <div class="text-sm text-gray-500">Service Status</div>
+                                <div class="text-xl font-bold" :class="serviceRunning ? 'text-green-600' : 'text-red-600'" x-text="serviceRunning ? 'Running' : 'Stopped'"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-3">
+                            <button 
+                                @click="simulateRandomSMS()" 
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors"
+                                :disabled="!serviceRunning || isLoading"
+                                :class="{'opacity-50 cursor-not-allowed': !serviceRunning || isLoading}"
+                            >
+                                <span x-show="!isLoading">Simulate Random SMS</span>
+                                <span x-show="isLoading">Simulating...</span>
+                            </button>
+                            <button 
+                                @click="refreshQueueStatus()" 
+                                class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg transition-colors"
+                            >
+                                Refresh Status
+                            </button>
+                        </div>
+                        
+                        <div class="mt-4 text-sm text-gray-500">
+                            <p>The background service processes SMS messages automatically as they arrive.</p>
+                            <p>You can simulate new SMS messages to test the system.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Input Area -->
+                <div class="border-t pt-4">
+                    <form @submit.prevent="sendMessage" class="flex space-x-2">
+                        <input 
+                            type="text" 
+                            x-model="userInput" 
+                            class="flex-grow px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                            placeholder="Ask a financial question or paste a banking SMS..."
+                            :disabled="isLoading"
+                        >
+                        <button 
+                            type="submit" 
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                            :disabled="isLoading || !userInput.trim()"
+                            :class="{'opacity-50 cursor-not-allowed': isLoading || !userInput.trim()}"
+                        >
+                            <span x-show="!isLoading">Send</span>
+                            <span x-show="isLoading" class="flex items-center">
+                                <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Processing...
+                            </span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Sample Questions -->
+            <div class="mt-4 bg-white rounded-lg shadow-md p-4">
+                <h3 class="text-lg font-medium mb-2">Sample Questions & SMS</h3>
+                
+                <div class="mb-3">
+                    <h4 class="text-sm font-medium text-gray-600 mb-2">Financial Questions:</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                        <button 
+                            @click="selectSampleQuestion('I want to go on a trip in 5 months. How much should I save every month?')" 
+                            class="text-left text-sm bg-gray-100 hover:bg-gray-200 p-2 rounded border border-gray-200"
+                        >
+                            I want to go on a trip in 5 months. How much should I save every month?
+                        </button>
+                        <button 
+                            @click="selectSampleQuestion('Help me build a saving plan for a ₹1 lakh wedding budget in 6 months.')" 
+                            class="text-left text-sm bg-gray-100 hover:bg-gray-200 p-2 rounded border border-gray-200"
+                        >
+                            Help me build a saving plan for a ₹1 lakh wedding budget in 6 months.
+                        </button>
+                        <button 
+                            @click="selectSampleQuestion('What\'s the best way to save for a new phone in 3 months?')" 
+                            class="text-left text-sm bg-gray-100 hover:bg-gray-200 p-2 rounded border border-gray-200"
+                        >
+                            What's the best way to save for a new phone in 3 months?
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-medium text-gray-600 mb-2">Sample SMS:</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        <button 
+                            @click="selectSampleQuestion('Your card ending with 1234 has been debited for Rs.2500 at Swiggy on 05-04-2023. Available balance is Rs.45000.')" 
+                            class="text-left text-sm bg-blue-50 hover:bg-blue-100 p-2 rounded border border-blue-200"
+                        >
+                            Your card ending with 1234 has been debited for Rs.2500 at Swiggy on 05-04-2023. Available balance is Rs.45000.
+                        </button>
+                        <button 
+                            @click="selectSampleQuestion('Rs.15000 credited to your account ending with 5678 on 06-04-2023. Updated balance: Rs.35000. Ref: NEFT/IMPS/RTG123456.')" 
+                            class="text-left text-sm bg-blue-50 hover:bg-blue-100 p-2 rounded border border-blue-200"
+                        >
+                            Rs.15000 credited to your account ending with 5678 on 06-04-2023. Updated balance: Rs.35000. Ref: NEFT/IMPS/RTG123456.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-4">
+            <div class="container mx-auto px-4 text-center">
+                <p class="text-sm">Finance AI Chat powered by Gemini LLM</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- App Script -->
+    <script>
+        function chatApp() {
+            return {
+                userInput: '',
+                messages: [
+                    {
+                        role: 'ai',
+                        content: 'Hello! I\'m your Financial AI assistant. I can help answer questions about saving plans, budgeting, and financial advice based on your transaction history. I can also process your banking SMS messages to track your expenses. How can I help you today?'
+                    }
+                ],
+                isLoading: false,
+                apiUrl: 'http://localhost:8000',
+                serviceRunning: false,
+                displayMode: 'chat', // 'chat' or 'monitor'
+                queueStatus: {
+                    queue_size: 0,
+                    processed_count: 0,
+                    is_running: false
+                },
+                
+                async sendMessage() {
+                    if (!this.userInput.trim()) return;
+                    
+                    // Add user message to chat
+                    this.messages.push({
+                        role: 'user',
+                        content: this.userInput
+                    });
+                    
+                    const userQuestion = this.userInput;
+                    this.userInput = '';
+                    this.isLoading = true;
+                    
+                    // Scroll to bottom
+                    this.scrollToBottom();
+                    
+                    try {
+                        // First, check if this looks like an SMS message
+                        const isSMS = this.looksLikeSMS(userQuestion);
+                        
+                        // Choose the endpoint based on content
+                        const endpoint = isSMS ? '/sms' : '/question';
+                        const requestBody = isSMS 
+                            ? { sms_text: userQuestion } 
+                            : { question: userQuestion };
+                        
+                        // Send to API
+                        const response = await fetch(`${this.apiUrl}${endpoint}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(requestBody)
+                        });
+                        
+                        if (!response.ok) {
+                            throw new Error('Failed to get response from AI');
+                        }
+                        
+                        const data = await response.json();
+                        
+                        // Format AI response
+                        let aiResponseText = '';
+                        let dataSufficient = data.data_sufficient || false;
+                        
+                        // If there's top 3 recommendations, include those
+                        if (data.top_3_recommendations) {
+                            aiResponseText = data.top_3_recommendations;
+                        }
+                        // Otherwise construct a response from the transaction data
+                        else if (data.transaction) {
+                            aiResponseText = `I've analyzed your transaction and here's what I found:\n\n`;
+                            
+                            if (data.transaction.merchant_name) {
+                                aiResponseText += `Transaction with ${data.transaction.merchant_name} `;
+                            }
+                            
+                            if (data.transaction.amount) {
+                                const type = data.transaction.transaction_type || 'transaction';
+                                aiResponseText += `for ₹${data.transaction.amount.toLocaleString()} (${type}) `;
+                            }
+                            
+                            if (data.transaction.date) {
+                                aiResponseText += `on ${data.transaction.date}. `;
+                            }
+                            
+                            if (data.category) {
+                                aiResponseText += `\nCategory: ${data.category}`;
+                            }
+                            
+                            if (data.archetype && data.archetype !== "Insufficient Data") {
+                                aiResponseText += `\n\nBased on your spending patterns, you appear to be a "${data.archetype}". `;
+                            }
+                            
+                            if (data.balance_updated) {
+                                aiResponseText += `\n\nYour account balance has been updated to ₹${data.transaction.balance.toLocaleString()}.`;
+                            }
+                            
+                            // Add a note if data is insufficient
+                            if (!data.data_sufficient) {
+                                aiResponseText += `\n\nNote: I need more transaction data to provide accurate recommendations. Please continue to process your banking SMS messages to improve your financial profile.`;
+                            }
+                        } else {
+                            aiResponseText = "I'm sorry, I couldn't process your request properly. Could you try rephrasing or ask a different question?";
+                        }
+                        
+                        // Add AI response to chat
+                        this.messages.push({
+                            role: 'ai',
+                            content: aiResponseText,
+                            dataSufficient: dataSufficient
+                        });
+                        
+                        // Get updated status after processing
+                        if (isSMS) {
+                            this.refreshQueueStatus();
+                        }
+                        
+                    } catch (error) {
+                        console.error('Error:', error);
+                        this.messages.push({
+                            role: 'ai',
+                            content: 'Sorry, I encountered an error processing your request. Please try again later.'
+                        });
+                    } finally {
+                        this.isLoading = false;
+                        
+                        // Scroll to bottom
+                        this.$nextTick(() => {
+                            this.scrollToBottom();
+                        });
+                    }
+                },
+                
+                scrollToBottom() {
+                    const chatMessages = document.getElementById('chat-messages');
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                },
+                
+                formatMessage(text) {
+                    // Convert line breaks to <br> tags
+                    return text.replace(/\n/g, '<br>');
+                },
+                
+                selectSampleQuestion(question) {
+                    this.userInput = question;
+                },
+                
+                looksLikeSMS(text) {
+                    // Keywords that suggest a transaction SMS
+                    const keywords = [
+                        "debited", "credited", "spent", "paid", "payment", "purchase", 
+                        "transaction", "balance", "bank", "card", "account", "rs.", "₹",
+                        "transfer", "txn", "debit", "credit", "withdraw", "deposit"
+                    ];
+                    
+                    // Convert to lowercase for case-insensitive matching
+                    const textLower = text.toLowerCase();
+                    
+                    // Check if any transaction keyword is in the text
+                    for (const keyword of keywords) {
+                        if (textLower.includes(keyword.toLowerCase())) {
+                            return true;
+                        }
+                    }
+                    
+                    return false;
+                },
+                
+                async refreshQueueStatus() {
+                    try {
+                        const response = await fetch(`${this.apiUrl}/background/status`);
+                        if (response.ok) {
+                            this.queueStatus = await response.json();
+                            this.serviceRunning = this.queueStatus.is_running;
+                        }
+                    } catch (error) {
+                        console.error("Error fetching queue status:", error);
+                    }
+                },
+                
+                async toggleBackgroundService() {
+                    try {
+                        const endpoint = this.serviceRunning ? '/background/stop' : '/background/start';
+                        const response = await fetch(`${this.apiUrl}${endpoint}`, {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            await this.refreshQueueStatus();
+                            
+                            // Add a system message
+                            this.messages.push({
+                                role: 'ai',
+                                content: `Background SMS processing service ${this.serviceRunning ? 'started' : 'stopped'}.`
+                            });
+                            
+                            this.scrollToBottom();
+                        }
+                    } catch (error) {
+                        console.error("Error toggling background service:", error);
+                    }
+                },
+                
+                async simulateRandomSMS() {
+                    try {
+                        this.isLoading = true;
+                        
+                        // Add a message indicating simulation
+                        this.messages.push({
+                            role: 'ai',
+                            content: 'Simulating a random banking SMS message...'
+                        });
+                        
+                        this.scrollToBottom();
+                        
+                        const response = await fetch(`${this.apiUrl}/background/simulate`, {
+                            method: 'POST'
+                        });
+                        
+                        if (response.ok) {
+                            await this.refreshQueueStatus();
+                            
+                            // Add a success message
+                            this.messages.push({
+                                role: 'ai',
+                                content: 'Random SMS generated and added to processing queue. It will be processed in the background.'
+                            });
+                            
+                            this.scrollToBottom();
+                        }
+                    } catch (error) {
+                        console.error("Error simulating SMS:", error);
+                        this.messages.push({
+                            role: 'ai',
+                            content: 'Error simulating SMS. Please try again.'
+                        });
+                    } finally {
+                        this.isLoading = false;
+                    }
+                },
+                
+                async init() {
+                    // Check if background service is running
+                    await this.refreshQueueStatus();
+                    
+                    // Set up periodic status refresh
+                    setInterval(() => this.refreshQueueStatus(), 5000);
+                }
+            };
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Transaction Parser</title>
+    
+    <!-- Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for reactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+    
+    <style>
+        [x-cloak] { display: none !important; }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div x-data="smsApp()" x-cloak>
+        <!-- Header -->
+        <header class="bg-blue-600 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-6">
+                <h1 class="text-3xl font-bold">SMS Transaction Parser</h1>
+                <p class="text-blue-100">Extract, categorize, and get personalized recommendations</p>
+            </div>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- SMS Input Section -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-xl font-semibold mb-4">Enter SMS Message</h2>
+                
+                <div class="mb-4">
+                    <textarea 
+                        x-model="smsText" 
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                        rows="4" 
+                        placeholder="Paste your banking SMS here..."
+                    ></textarea>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button 
+                        @click="processSMS()" 
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+                        :disabled="isLoading || !smsText"
+                        :class="{'opacity-50 cursor-not-allowed': isLoading || !smsText}"
+                    >
+                        <span x-show="!isLoading">Process SMS</span>
+                        <span x-show="isLoading" class="flex items-center">
+                            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Processing...
+                        </span>
+                    </button>
+                    
+                    <button 
+                        @click="smsText = ''; result = null;" 
+                        class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-300"
+                    >
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Sample Messages -->
+                <div class="mt-4">
+                    <p class="text-sm text-gray-600 mb-2">Try with sample SMS:</p>
+                    <div class="flex flex-wrap gap-2">
+                        <button 
+                            @click="selectSampleSMS(1)" 
+                            class="text-xs bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        >
+                            Debit Transaction
+                        </button>
+                        <button 
+                            @click="selectSampleSMS(2)" 
+                            class="text-xs bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        >
+                            Credit Transaction
+                        </button>
+                        <button 
+                            @click="selectSampleSMS(3)" 
+                            class="text-xs bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        >
+                            Shopping Transaction
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Results Section (only shown when there's a result) -->
+            <section x-show="result" class="mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Transaction Details -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold mb-4">Transaction Details</h2>
+                        
+                        <div x-show="result.transaction" class="space-y-3">
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Amount:</span>
+                                <span class="font-medium" :class="{
+                                    'text-red-600': result.transaction.transaction_type === 'debit',
+                                    'text-green-600': result.transaction.transaction_type === 'credit',
+                                    'text-blue-600': result.transaction.transaction_type === 'refund'
+                                }">
+                                    ₹<span x-text="result.transaction.amount.toLocaleString()"></span>
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Transaction Type:</span>
+                                <span class="capitalize font-medium" 
+                                    :class="{
+                                        'text-red-600': result.transaction.transaction_type === 'debit',
+                                        'text-green-600': result.transaction.transaction_type === 'credit',
+                                        'text-blue-600': result.transaction.transaction_type === 'refund'
+                                    }"
+                                    x-text="result.transaction.transaction_type">
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Merchant:</span>
+                                <span class="font-medium" x-text="result.transaction.merchant_name || 'N/A'"></span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Category:</span>
+                                <span x-text="result.category" class="inline-block bg-blue-100 text-blue-800 py-1 px-2 rounded text-sm font-medium"></span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Account:</span>
+                                <span class="font-medium" x-text="result.transaction.account_masked"></span>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <span class="w-40 text-gray-600">Date:</span>
+                                <span class="font-medium" x-text="result.transaction.date"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- User Profile & Summary -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold mb-4">Financial Profile</h2>
+                        
+                        <div x-show="result.archetype" class="mb-6">
+                            <h3 class="text-lg font-medium mb-2">Your Archetype</h3>
+                            <div class="bg-purple-100 text-purple-800 py-2 px-4 rounded-lg">
+                                <span class="font-semibold" x-text="result.archetype"></span>
+                            </div>
+                        </div>
+                        
+                        <div x-show="result.summary">
+                            <h3 class="text-lg font-medium mb-2">Spending Summary</h3>
+                            <div class="space-y-2">
+                                <template x-for="(amount, category) in result.summary" :key="category">
+                                    <div class="flex justify-between items-center">
+                                        <span x-text="category"></span>
+                                        <span class="font-medium">₹<span x-text="amount.toLocaleString()"></span></span>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Recommendations Section -->
+            <section x-show="result && result.top_3_recommendations" class="mb-8">
+                <h2 class="text-2xl font-semibold mb-6">Your Personalized Recommendations</h2>
+                
+                <div class="whitespace-pre-line text-gray-800 bg-white p-6 rounded-lg shadow-md" x-text="result.top_3_recommendations">
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-6">
+            <div class="container mx-auto px-4 text-center">
+                <p>SMS Transaction Parser & Recommendation System</p>
+                <p class="text-sm text-gray-400 mt-2">Built with FastAPI, SQLite, and Gemini AI</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- App Script -->
+    <script src="script.js"></script>
+</body>
+</html> 

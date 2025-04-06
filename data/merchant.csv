@@ -1,0 +1,508 @@
+merchant_abbreviation,merchant_name,category
+BBKT,BigBasket,Groceries
+DMRT,DMart,Groceries
+RFSH,Reliance Fresh,Groceries
+SPNC,Spencer's,Groceries
+MORE,More Supermarket,Groceries
+NBKT,Nature's Basket,Organic
+BLNK,Grofers/Blinkit,Groceries
+JMRT,JioMart,Groceries
+SPAR,Spar Hypermarket,Groceries
+STBZ,Star Bazaar,Groceries
+NLGR,Nilgiris,Groceries
+FDBZ,Food Bazaar,Groceries
+RTDP,Ratnadeep Supermarket,Groceries
+NMDH,Namdhari's Fresh,Organic
+ESDY,Easyday,Groceries
+GNBK,Godrej Nature's Basket,Organic
+SHKR,Sahakari Bhandar,Groceries
+PTLM,Patel's R Mart,Groceries
+HRTG,Heritage Fresh,Groceries
+HCTY,HyperCity,Shopping
+RSMT,Reliance Smart,Groceries
+ACHN,Auchan,Groceries
+LULU,Lulu Hypermarket,Groceries
+MTRO,Metro Cash & Carry,Groceries
+EDCL,Easyday Club,Groceries
+SFAL,Safal,Organic
+FDWD,FoodWorld,Groceries
+RMKT,Reliance Market,Groceries
+MXHP,Max Hypermarket,Groceries
+FDCT,Food Court,Other
+MFYU,More For You,Groceries
+VLZN,Value Zone,Groceries
+FDSQ,Food Square,Groceries
+APBZ,Apna Bazar,Groceries
+KRGR,Krishnagro,Groceries
+LMRC,Le Marche,Organic
+MDBZ,Modern Bazaar,Groceries
+RSPT,Reliance Smart Point,Groceries
+BLSM,Balaji Super Market,Groceries
+RFSD,Reliance Fresh Daily,Groceries
+VMRT,V Mart,Groceries
+SJSM,Shreeji Super Market,Groceries
+QMRT,Q Mart Hyderabad,Groceries
+VJTH,Vijetha Supermarket,Groceries
+MGSN,Magsons,Groceries
+FTMT,Fortune Mart,Groceries
+HYDF,Hyderabad Fresh,Groceries
+NRFM,Neerus Fresh Mart,Groceries
+AORG,Aarogya Organic Foods,Organic
+MKRT,MK Retail,Groceries
+SMBZ,Smart Bazaar,Groceries
+JBBZ,Jubilee Bazaar,Groceries
+RYMT,Royal Mart,Groceries
+24X7,Twenty Four Seven,Convenience
+PTNJ,Patanjali Store,Organic
+MRTS,Maruthi Supermarket,Groceries
+HYDM,Hyderabad Mart,Groceries
+GSRT,GS Retail,Groceries
+VSST,Vishwaas Super Store,Groceries
+NPLS,Noble Plus Supermarket,Groceries
+MHMD,Mohammedia Supermarket,Groceries
+SAMP,Sampoorna Supermarket,Groceries
+USHD,Ushodaya Supermarket,Groceries
+MYNT,Myntra,Fashion
+FLPK,Flipkart,Shopping
+AMZN,Amazon India,Shopping
+AJIO,Ajio,Fashion
+NYKA,Nykaa,Beauty
+TCLQ,Tata CLiQ,Shopping
+RTRD,Reliance Trends,Fashion
+SHST,Shoppers Stop,Retail
+LFST,Lifestyle,Retail
+WSTS,Westside,Fashion
+PNTL,Pantaloons,Fashion
+MXFS,Max Fashion,Fashion
+CRMA,Croma,Electronics
+VJSL,Vijay Sales,Electronics
+RDGT,Reliance Digital,Electronics
+JBNG,Jabong,Fashion
+SNDL,Snapdeal,Shopping
+KOVS,Koovs,Fashion
+SHCL,Shopclues,Shopping
+LMRD,Limeroad,Fashion
+PPFR,Pepperfry,Home
+URLD,Urban Ladder,Home
+FBID,Fabindia,Fashion
+RFTP,Reliance Footprint,Fashion
+CNTL,Central,Retail
+BRFT,Brand Factory,Fashion
+VSHL,Vishal Mega Mart,Retail
+VMRT,V-Mart,Retail
+ZVME,Zivame,Fashion
+BIBA,Biba,Fashion
+MNVR,Manyavar,Fashion
+FCRY,FirstCry,Kids
+BBYE,BabyOye,Kids
+PRPL,Purplle,Beauty
+HLGW,Health & Glow,Beauty
+MSHO,Meesho,Shopping
+FSNR,Fashnear,Fashion
+STBL,StalkBuyLove,Fashion
+ROPO,Roposo,Fashion
+BWKF,Bewakoof,Fashion
+LBLB,LBB (Little Black Book),Fashion
+KLMN,Kalamandir,Fashion
+CMRM,CMR Shopping Mall,Retail
+RSBR,RS Brothers,Fashion
+HDSM,Hyderabad Shopping Mall,Retail
+SGRM,Sagar Shopping Mall,Retail
+SISM,South India Shopping Mall,Retail
+CHRM,Chermas,Fashion
+CHSL,Chennai Silks,Fashion
+KLNK,Kalanikethan,Fashion
+KLKT,Kalaniketan,Fashion
+MNGJ,Mangatrai Jewellers,Jewellery
+GRTJ,GRT Jewellers,Jewellery
+TNSH,Tanishq,Jewellery
+CRTL,CaratLane,Jewellery
+PCJW,P.C. Jewellers,Jewellery
+ZMTO,Zomato,Food Delivery
+SWGY,Swiggy,Food Delivery
+DMNP,Domino's Pizza,Fast Food
+MCDO,McDonald's,Fast Food
+HLDR,Haldiram's,Dining
+CCD,Cafe Coffee Day,Cafe
+BHRZ,Behrouz Biryani,Fast Food
+FASO,Faasos,Fast Food
+PZHT,Pizza Hut,Fast Food
+KFCI,KFC India,Fast Food
+BKNG,Burger King India,Fast Food
+CHPT,Chai Point,Cafe
+SBWY,Subway India,Fast Food
+BBQN,Barbeque Nation,Dining
+BOX8,Box8,Fast Food
+BBYK,Biryani by Kilo,Fast Food
+OVSP,Oven Story Pizza,Fast Food
+SHDL,Smoke House Deli,Cafe
+THBR,Theobroma,Bakery
+SMOR,Smoor,Bakery
+SBKS,Starbucks India,Cafe
+COST,Costa Coffee India,Cafe
+WMMO,Wow! Momo,Fast Food
+BWAF,The Belgian Waffle Co.,Fast Food
+SOCL,Social,Cafe
+BRCF,The Beer Cafe,Bar
+BKVL,Bikanervala,Dining
+NRUL,Nirula's,Dining
+YOCH,Yo! China,Fast Food
+MODN,Mad Over Donuts,Fast Food
+CHSB,Chai Sutta Bar,Cafe
+GVDP,Goli Vada Pav,Fast Food
+RLKG,Rollsking,Fast Food
+TCBL,Taco Bell,Fast Food
+NNDO,Nando's,Dining
+BGCH,The Big Chill,Cafe
+NICA,Naturals Ice Cream,Ice Cream
+CRCN,Cream Centre,Dining
+CHCR,The Chocolate Room,Cafe
+DNKN,Dunkin' Donuts,Fast Food
+PRDZ,Paradise Biryani,Dining
+MHFL,Mehfil Restaurant,Dining
+KRTG,Kritunga Restaurant,Dining
+BWCH,Bawarchi Hyderabad,Dining
+CHTN,Chutneys,Dining
+OHRS,Ohri's,Dining
+PSTH,Pista House,Dining
+SHGH,Shah Ghouse,Dining
+ALPH,Alpha Hotel,Dining
+KRCH,Karachi Bakery,Bakery
+IOCL,Indian Oil,Fuel
+BPCL,Bharat Petroleum,Fuel
+HPCL,Hindustan Petroleum,Fuel
+RLPT,Reliance Petroleum,Fuel
+SHEL,Shell India,Fuel
+ESSR,Essar Oil,Fuel
+NAYR,Nayara Energy,Fuel
+ADNG,Adani Gas,Gas
+TOTL,Total,Fuel
+GULF,Gulf Oil,Fuel
+SERV,IndianOil SERVO,Fuel
+HPGS,HP Gas,Fuel
+MGL,Mahanagar Gas Limited,Gas
+IGL,Indraprastha Gas Limited,Gas
+GUJG,Gujarat Gas,Gas
+RLGS,Reliance Gas,Gas
+PLNG,Petronet LNG,Fuel
+OPAL,ONGC Petro Additions Limited,Fuel
+CARN,Cairn India,Fuel
+PTRL,Petrol Pump,Fuel
+GRNG,Green Gas Limited,Gas
+GAIL,GAIL Gas,Gas
+IGLC,IGL CNG,Fuel
+MGLC,MGL CNG,Fuel
+ADTG,Adani Total Gas,Gas
+BPGS,BPCL Gas,Fuel
+IOGS,IOCL Gas,Fuel
+HPGS,HPCL Gas,Fuel
+RCNG,Reliance CNG,Fuel
+SHGS,Shell Gas,Fuel
+ESCG,Essar CNG,Fuel
+NECG,Nayara Energy CNG,Fuel
+ADNC,ADNOC,Fuel
+JIOB,Jio-bp,Fuel
+IOXC,IndianOil XTRACARE,Fuel
+BPPS,Bharat Petroleum Pure for Sure,Fuel
+HPPU,Hindustan Petroleum Power Up,Fuel
+TLNG,Total Energies,Fuel
+RSNF,Rosneft,Fuel
+BPHD,BPCL Hyderabad,Fuel
+IOHD,IOCL Hyderabad,Fuel
+HPHD,HPCL Hyderabad,Fuel
+SHSC,Shell Secunderabad,Fuel
+RPHD,Reliance Pump Hyderabad,Fuel
+MMT,MakeMyTrip,Travel
+CLTP,Cleartrip,Travel
+YTRA,Yatra,Travel
+GOIB,Goibibo,Travel
+IRCT,IRCTC,Travel
+OYO,OYO Rooms,Hotels
+OLA,Ola Cabs,Ride
+UBER,Uber India,Ride
+RBUS,redBus,Travel
+TREB,Treebo Hotels,Hotels
+FABH,Fab Hotels,Hotels
+TAJ,Taj Hotels,Hotels
+AKBR,Akbar Travels,Travel
+EMT,EaseMyTrip,Travel
+IXGO,Ixigo,Travel
+TGRU,Travelguru,Travel
+TADV,TripAdvisor India,Travel
+HEG,HappyEasyGo,Travel
+VIA,Via.com,Travel
+TTRG,TravelTriangle,Travel
+MSAF,Musafir.com,Travel
+RLYT,RailYatri,Travel
+ZMCR,Zoomcar,Ride
+SVCR,Savaari Car Rentals,Ride
+MERU,Meru Cabs,Ride
+TRVG,Trivago India,Travel
+AGDA,Agoda India,Hotels
+BKNG,Booking.com India,Hotels
+EXPD,Expedia India,Travel
+PTMT,Paytm Travel,Travel
+ABHI,AbhiBus,Travel
+NMRN,Neemrana Hotels,Hotels
+STRL,Sterling Holidays,Travel
+TCOK,Thomas Cook India,Travel
+SOTC,SOTC Travel,Travel
+KSRI,Kesari Tours,Travel
+TVPT,Travelport,Travel
+TBOL,Travel Boutique Online,Travel
+CLBM,Club Mahindra,Travel
+LELA,Leela Hotels,Hotels
+LMNT,Lemon Tree Hotels,Hotels
+HYDC,Hyderabad Cabs,Ride
+TLGT,Telangana Tourism,Travel
+DCNT,Deccan Travels,Travel
+APTM,Andhra Pradesh Tourism,Travel
+HYGR,Hyderabad-Goa Travels,Travel
+APTH,AP Tourism Hotels,Hotels
+RTHY,Royal Travels Hyderabad,Travel
+BMS,BookMyShow,Entertainment
+PVR,PVR Cinemas,Cinema
+INOX,INOX Leisure,Cinema
+NFLX,Netflix India,Streaming
+APVI,Amazon Prime Video India,Streaming
+HSTR,Hotstar Disney+,Streaming
+SLIV,Sony LIV,Streaming
+ZEE5,Zee5,Streaming
+JSAV,JioSaavn,Music
+GANA,Gaana,Music
+WYNK,Wynk Music,Music
+CULT,Cult.fit,Fitness
+WDRL,Wonderla,Amusement
+IMGC,Imagica,Amusement
+SMAS,Smaaash,Amusement
+TKTN,TicketNew,Entertainment
+INSD,Insider.in,Entertainment
+PTMI,Paytm Insider,Entertainment
+MSTZ,MastiZone,Amusement
+FUNC,Fun Cinemas,Cinema
+CNPL,Cinepolis,Cinema
+BIGC,Big Cinemas,Cinema
+RJHN,Rajhans Cinemas,Cinema
+SPTF,Spotify India,Music
+HNGM,Hungama,Music
+ALTB,ALTBalaji,Streaming
+VOOT,Voot,Streaming
+EROS,Eros Now,Streaming
+MXPL,MX Player,Streaming
+SHEM,ShemarooMe,Streaming
+HCHO,Hoichoi,Streaming
+ARRE,Arre,Streaming
+YPTV,YuppTV,Streaming
+AXST,Airtel Xstream,Streaming
+JCNM,JioCinema,Streaming
+SNXT,Sun NXT,Streaming
+MNRM,Manorama Max,Streaming
+VIU,Viu,Streaming
+DSCP,Discovery Plus,Streaming
+EPOC,Epic ON,Streaming
+DCBY,Docubay,Streaming
+PIMX,Prasads IMAX Hyderabad,Cinema
+ASNC,Asian Cinemas,Cinema
+AMBC,AMB Cinemas,Cinema
+SND7,Sandhya 70MM,Cinema
+SHTH,Shanti Theatre Hyderabad,Cinema
+CCHD,Carnival Cinemas Hyderabad,Cinema
+CPKM,Cineplanet Kompally,Cinema
+PLMT,Platinum Movietime,Cinema
+TVSC,Tivoli Secunderabad,Cinema
+APLP,Apollo Pharmacy,Pharmacy
+MDPL,MedPlus,Pharmacy
+NTMD,Netmeds,Pharmacy
+PHEZ,PharmEasy,Pharmacy
+1MG,1mg,Pharmacy
+PRCT,Practo,Healthcare
+LNSK,Lenskart,Healthcare
+APLO,Apollo Hospitals,Hospitals
+MAXH,Max Healthcare,Hospitals
+FORT,Fortis Healthcare,Hospitals
+THYR,Thyrocare,Diagnostics
+LLPL,Dr. Lal PathLabs,Diagnostics
+CULT,Cult.fit,Fitness
+HMLY,Himalaya Wellness,Healthcare
+PTNJ,Patanjali,Healthcare
+T1ML,Tata 1mg Labs,Diagnostics
+DAPP,DocsApp,Healthcare
+MDLF,Medlife,Pharmacy
+MUPC,MyUpchar,Healthcare
+HLFM,HealthifyMe,Fitness
+MBUD,MediBuddy,Healthcare
+PORT,Portea Medical,Healthcare
+LBRT,Lybrate,Healthcare
+MFIN,mfine,Healthcare
+ONCO,Onco.com,Healthcare
+CURE,Cure.fit,Healthcare
+HLTH,Healthians,Diagnostics
+THLH,TATA Health,Healthcare
+SRLD,SRL Diagnostics,Diagnostics
+MTPH,Metropolis Healthcare,Diagnostics
+NRYN,Narayana Health,Hospitals
+ADMC,Aster DM Healthcare,Hospitals
+MNPL,Manipal Hospitals,Hospitals
+CLBA,Columbia Asia Hospitals,Hospitals
+CARE,Care Hospitals,Hospitals
+WOCK,Wockhardt Hospitals,Hospitals
+ZQTZ,Ziqitza Healthcare,Healthcare
+DCPM,Docprime,Healthcare
+DCON,Docon,Healthcare
+TIMG,Tata Img Hospitals,Healthcare
+KIMS,KIMS Hospitals Hyderabad,Hospitals
+YSHD,Yashoda Hospitals,Hospitals
+STAR,Star Hospitals,Hospitals
+SUNS,Sunshine Hospitals,Hospitals
+NIMS,NIMS Hyderabad,Hospitals
+MXCR,Maxcure Hospitals,Hospitals
+TPWR,Tata Power,Power
+BSRJ,BSES Rajdhani,Power
+BSYM,BSES Yamuna,Power
+ADEL,Adani Electricity,Power
+MGL,Mahanagar Gas,Gas
+APBK,Airtel Payments Bank,Finance
+JPBK,Jio Payments Bank,Finance
+MSEB,MSEB (Maharashtra State Electricity Board),Power
+BSCM,BESCOM (Bangalore Electricity),Power
+DJB,Delhi Jal Board,Water
+TSKY,Tata Sky,TV
+DSTV,Dish TV,TV
+LICI,LIC India,Insurance
+ICIL,ICICI Lombard,Insurance
+BJAZ,Bajaj Allianz,Insurance
+RLEN,Reliance Energy,Power
+NDPL,NDPL (North Delhi Power Limited),Power
+TRNT,Torrent Power,Power
+CESC,CESC (Calcutta Electric Supply Corporation),Power
+KSEB,KSEB (Kerala State Electricity Board),Power
+UPCL,UPCL (Uttarakhand Power Corporation Limited),Power
+PSPC,PSPCL (Punjab State Power Corporation Limited),Power
+DHBV,DHBVN (Dakshin Haryana Bijli Vitran Nigam),Power
+UHBV,UHBVN (Uttar Haryana Bijli Vitran Nigam),Power
+APED,APEPDCL (Andhra Pradesh Eastern Power...,Power
+APSD,APSPDCL (Andhra Pradesh Southern Power...,Power
+KSEB,KSEB (Kerala State Electricity Board),Power
+JVVN,JVVNL (Jaipur Vidyut Vitran Nigam Limited),Power
+AVVN,AVVN (Ajmer Vidyut Vitran Nigam Limited),Power
+MVVN,MVVNL (Madhya Pradesh Vidyut... Nigam Limited),Power
+PHPE,PhonePe,Payments
+GPAY,Google Pay (GPay),Payments
+PYTM,Paytm,Payments
+AMZP,Amazon Pay,Payments
+BHIM,BHIM UPI,Payments
+MKWK,MobiKwik,Payments
+FRCH,Freecharge,Payments
+ICIM,ICICI iMobile Pay,Payments
+HDZP,HDFC PayZapp,Payments
+YONO,SBI YONO,Payments
+AXSM,Axis Mobile,Payments
+ATLM,Airtel Money,Payments
+JIOM,JioMoney,Payments
+WAPM,WhatsApp Payments,Payments
+YESP,Yes Pay,Payments
+PYUM,PayU Money,Payments
+PZHD,PayZapp by HDFC,Payments
+PYNB,PayNearby,Payments
+PINL,Pine Labs,Payments
+BHPE,BharatPe,Payments
+PTMW,Paytm Wallet,Payments
+MKWW,Mobikwik Wallet,Payments
+AMZW,Amazon Pay Wallet,Payments
+APBW,Airtel Payments Bank Wallet,Payments
+JMWL,JioMoney Wallet,Payments
+PTMM,Paytm Money,Finance
+PPLI,PayPal India,Payments
+INMJ,Instamojo,Payments
+RZPY,Razorpay,Payments
+CTPY,Citrus Pay,Payments
+PAYU,PayU,Payments
+EZTP,Ezetap,Payments
+MSWP,Mswipe,Payments
+CCAV,CCAvenue,Payments
+BLDS,BillDesk,Payments
+JUSP,Juspay,Payments
+PYMT,Paymate,Payments
+PTPP,Paytm Postpaid,Finance
+LZPY,LazyPay,Finance
+BBPY,Bharat BillPay,Payments
+ZRDH,Zerodha,Broker
+GROW,Groww,Investing
+UPSX,Upstox,Broker
+ANGL,Angel Broking,Broker
+ICID,ICICI Direct,Broker
+KTKS,Kotak Securities,Broker
+SHKN,Sharekhan,Broker
+HDFS,HDFC Securities,Broker
+SBIC,SBI Cap Securities,Broker
+MTOS,Motilal Oswal,Broker
+5PAI,5Paisa,Broker
+NIMF,Nippon India Mutual Fund,Investing
+WZRX,WazirX,Crypto
+CDCX,CoinDCX,Crypto
+CSWK,CoinSwitch Kuber,Crypto
+RKSV,RKSV Securities,Broker
+TDPL,TradePlus,Broker
+FYER,Fyers,Broker
+SAMC,SAMCO Securities,Broker
+IIFL,IIFL Securities,Broker
+ALCB,Alice Blue,Broker
+BNZP,Bonanza Portfolio,Broker
+TSMO,Trade Smart Online,Broker
+GEOF,Geojit Financial Services,Broker
+HDSK,HDFC Sky,Broker
+RELS,Reliance Securities,Broker
+ABML,Aditya Birla Money,Broker
+SMCG,SMC Global Securities,Broker
+KRVY,Karvy Stock Broking,Broker
+RELB,Religare Broking,Broker
+LKPS,LKP Securities,Broker
+VNTS,Ventura Securities,Broker
+ANRT,Anand Rathi,Broker
+IBVN,Indiabulls Ventures,Broker
+EDLW,Edelweiss Broking,Broker
+AXDR,Axis Direct,Broker
+JMFS,JM Financial Services,Broker
+CHBR,Choice Broking,Broker
+MSTR,Master Trust,Broker
+NRMB,Nirmal Bang,Broker
+PGAC,PG Accommodations,Housing
+HSNG,Housing.com,Real Estate
+NOBK,NoBroker,Real Estate
+BSES,BSES,Utilities
+TPWR,Tata Power,Utilities
+ATLB,Airtel Broadband,Internet
+JFBR,Jio Fiber,Internet
+BYJU,BYJU'S,Education
+UNAC,Unacademy,Education
+VDNT,Vedantu,Education
+BBKD,Big Basket Daily,Groceries
+URBC,Urban Company,Home Services
+PSGK,Prestige Smart Kitchen,Home
+NLKM,Nilkamal,Home
+HTWN,HomeTown,Home
+MGBK,Magicbricks,Real Estate
+99AC,99acres,Real Estate
+SULK,Sulekha,Services
+QKHM,Quikr Homes,Real Estate
+PPTG,PropTiger,Real Estate
+MKAA,Makaan.com,Real Estate
+ZMTH,Zomato Hygiene,Food Delivery
+SWIG,Swiggy Instamart,Groceries
+DNZO,Dunzo,Groceries
+MKBS,Milkbasket,Groceries
+ZPTO,Zepto,Groceries
+LICS,Licious,Groceries
+FRTH,FreshToHome,Groceries
+SPRD,SuprDaily,Groceries
+DLNJ,Daily Ninja,Groceries
+NJCT,Ninjacart,Groceries
+MYGT,MyGate,Security
+OLAE,Ola Electric,Automotive
+ATHR,Ather Energy,Automotive
+LVSP,Livspace,Home Services
+PPFF,Pepperfry Furniture,Home
+FABF,FabFurnish,Home
+FBHD,FabHome Decor,Home
+HMLY,Homely,Home Services
+DCPT,Decorpot,Home Services
