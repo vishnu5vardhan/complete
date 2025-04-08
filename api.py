@@ -3,12 +3,13 @@
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import Dict, Any, List, Optional
 import uvicorn
 import json
 import db
-from enhanced_sms_parser import run_end_to_end, parse_sms_enhanced
+from enhanced_sms_parser import run_end_to_end, parse_sms_enhanced, handle_financial_question, is_sufficient_data_for_archetype
 import background_service  # Import the background service module
 
 # Initialize FastAPI app
@@ -17,6 +18,9 @@ app = FastAPI(
     description="API for parsing and analyzing financial SMS messages",
     version="1.0.0",
 )
+
+# Mount static files directory
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
 
 # Add CORS middleware
 app.add_middleware(
@@ -38,7 +42,13 @@ class RecommendationClick(BaseModel):
 
 class FinancialQuestion(BaseModel):
     question: str
-    user_id: Optional[int] = 1
+    user_id: int = 1
+
+class UserGoal(BaseModel):
+    goal_type: str
+    target_amount: float
+    target_date: Optional[str] = None
+    user_id: int = 1
 
 # API endpoints
 @app.get("/")
@@ -64,17 +74,145 @@ async def process_sms(request: SMSRequest):
         raise HTTPException(status_code=500, detail=f"Error processing SMS: {str(e)}")
 
 @app.post("/question")
-async def process_question(request: FinancialQuestion):
+async def handle_question(req: FinancialQuestion):
     """
-    Process a financial question and return a personalized response
-    based on the user's transaction history
+    Handle a financial question
     """
     try:
-        # Use the run_end_to_end function to process the question
-        result = run_end_to_end(request.question)
+        # Process the question
+        result = handle_financial_question(req.question, req.user_id)
+        
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error processing question: {str(e)}")
+
+@app.post("/goals")
+async def set_goal(goal: UserGoal):
+    """
+    Set a financial goal
+    """
+    try:
+        # Set the goal in the database
+        goal_id = db.set_user_goal(goal.dict(), goal.user_id)
+        
+        if goal_id:
+            return {"success": True, "goal_id": goal_id}
+        else:
+            raise HTTPException(status_code=500, detail="Failed to set goal")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error setting goal: {str(e)}")
+
+@app.get("/goals")
+async def get_goals(user_id: int = 1, include_achieved: bool = False):
+    """
+    Get all financial goals for a user
+    """
+    try:
+        # Get goals from the database
+        goals = db.get_user_goals(user_id, include_achieved)
+        
+        return {"success": True, "goals": goals}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting goals: {str(e)}")
+
+@app.put("/goals/{goal_id}")
+async def update_goal_progress(
+    goal_id: int, 
+    amount_added: float, 
+    user_id: int = 1
+):
+    """
+    Update progress for a financial goal
+    """
+    try:
+        # Update the goal progress in the database
+        success = db.update_goal_progress(goal_id, amount_added, user_id)
+        
+        if success:
+            # Get updated goal
+            goals = db.get_user_goals(user_id)
+            updated_goal = next((g for g in goals if g["id"] == goal_id), None)
+            
+            return {"success": True, "goal": updated_goal}
+        else:
+            raise HTTPException(status_code=404, detail="Goal not found or update failed")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error updating goal: {str(e)}")
+
+@app.get("/persona")
+async def get_persona(user_id: int = 1):
+    """
+    Get a user's financial persona summary
+    """
+    try:
+        # Check if we have enough data
+        enough_data = is_sufficient_data_for_archetype()
+        transaction_count = db.get_transaction_count()
+        
+        if not enough_data:
+            return {
+                "success": True,
+                "data_sufficient": False,
+                "message": (
+                    "I need at least one month of transactions to understand your profile. "
+                    f"Currently, I have {transaction_count} transactions. For now, feel free to ask me "
+                    "about general finance or credit card options."
+                ),
+                "transaction_count": transaction_count,
+                "data_threshold": {
+                    "min_transactions": 20,
+                    "min_days": 30,
+                    "current_transactions": transaction_count
+                }
+            }
+            
+        # Get the latest archetype
+        conn = db.get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT archetype FROM archetypes
+            WHERE user_id = ?
+            ORDER BY created_at DESC
+            LIMIT 1
+        """, (user_id,))
+        result = cursor.fetchone()
+        conn.close()
+        
+        if result:
+            # Convert sqlite3.Row to dict before accessing
+            result_dict = dict(result)
+            archetype = result_dict['archetype']
+        else:
+            archetype = None
+        
+        # Get financial summary
+        financial_summary = db.get_financial_summary()
+        
+        # Get active goals
+        goals = db.get_user_goals(user_id)
+        
+        # Calculate savings rate (income - expenses) / income
+        savings_rate = 0
+        total_income = db.get_total_income()
+        total_spending = db.get_total_spending()
+        
+        if total_income > 0:
+            savings_rate = (total_income - total_spending) / total_income * 100
+            
+        # Get top spending categories
+        top_categories = sorted(financial_summary.items(), key=lambda x: x[1], reverse=True)[:3]
+        
+        return {
+            "success": True,
+            "data_sufficient": True,
+            "archetype": archetype,
+            "spending_summary": financial_summary,
+            "goals": goals,
+            "savings_rate": savings_rate,
+            "top_categories": [{"category": cat, "amount": amt} for cat, amt in top_categories]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error getting persona summary: {str(e)}")
 
 @app.post("/background/enqueue")
 async def enqueue_sms(request: SMSRequest):
@@ -149,28 +287,54 @@ async def get_summary():
     Get the current category-wise financial summary and user archetype
     """
     try:
+        # Check if we have enough data for archetype
+        enough_data = is_sufficient_data_for_archetype()
+        transaction_count = db.get_transaction_count()
+        
         # Get financial summary from database
         financial_summary = db.get_financial_summary()
         
-        # Get latest archetype
-        conn = db.get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT archetype FROM archetypes
-            ORDER BY created_at DESC
-            LIMIT 1
-        """)
-        result = cursor.fetchone()
-        conn.close()
-        
-        archetype = result['archetype'] if result else "Unknown"
-        
-        return {
+        response = {
             "summary": financial_summary,
-            "archetype": archetype,
-            "total_transactions": db.get_transaction_count(),
-            "total_spending": db.get_total_spending()
+            "total_transactions": transaction_count,
+            "total_spending": db.get_total_spending(),
+            "data_sufficient": enough_data
         }
+        
+        if enough_data:
+            # Get latest archetype only if we have sufficient data
+            conn = db.get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("""
+                SELECT archetype FROM archetypes
+                ORDER BY created_at DESC
+                LIMIT 1
+            """)
+            result = cursor.fetchone()
+            conn.close()
+            
+            if result:
+                # Convert sqlite3.Row to dict before accessing
+                result_dict = dict(result)
+                archetype = result_dict['archetype']
+                response["archetype"] = archetype
+            else:
+                response["archetype"] = None
+        else:
+            # Include data threshold information in response
+            response["archetype"] = None
+            response["message"] = (
+                "I need at least one month of transactions to understand your profile. "
+                f"Currently, I have {transaction_count} transactions. For now, feel free to ask me "
+                "about general finance or credit card options."
+            )
+            response["data_threshold"] = {
+                "min_transactions": 20,
+                "min_days": 30,
+                "current_transactions": transaction_count
+            }
+        
+        return response
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error getting summary: {str(e)}")
 
@@ -188,8 +352,11 @@ async def get_transactions(limit: int = 10):
             LIMIT ?
         """, (limit,))
         
-        # Convert to list of dictionaries
-        transactions = [dict(row) for row in cursor.fetchall()]
+        # Convert each sqlite3.Row to a regular dictionary to avoid mutation issues
+        transactions = []
+        for row in cursor.fetchall():
+            transactions.append(dict(row))
+        
         conn.close()
         
         return {"transactions": transactions}

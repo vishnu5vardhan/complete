@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SMS Parser Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2563eb;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            min-height: 100px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        pre {
+            background-color: #f1f5f9;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .sample {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #e5e7eb;
+            border-radius: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+        .sample:hover {
+            background-color: #d1d5db;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple SMS Parser Test</h1>
+    
+    <div>
+        <label for="sender">Sender (optional):</label>
+        <input type="text" id="sender" placeholder="e.g., HDFCBANK, SBIINB">
+    </div>
+    
+    <div>
+        <label for="sms">SMS Text:</label>
+        <textarea id="sms" placeholder="Paste your SMS here..."></textarea>
+    </div>
+    
+    <div>
+        <button id="parseBtn">Parse SMS</button>
+        <button id="clearBtn" style="background-color: #6b7280;">Clear</button>
+    </div>
+    
+    <div style="margin: 20px 0;">
+        <h3>Sample Messages:</h3>
+        <div id="samples">
+            <div class="sample" data-sender="HDFCBANK" data-text="Dear Customer, Rs.5000.00 has been credited to your a/c XXXXXXXX1234 on 15-04-2023 by a/c linked to XXXXX7890. Avl bal: Rs.25000.00. If not done by you, call 1800111222. Ignore if you've done.">Bank Credit</div>
+            <div class="sample" data-sender="SBIINB" data-text="Your a/c XX1234 is debited with Rs.2,500.00 on 15-04-2023 and a/c XX5678 credited (IMPS Ref No 123456789012). Bal: Rs.12,345.67.">Bank Debit</div>
+            <div class="sample" data-sender="SWIGGY" data-text="Your payment of Rs.500.00 for Swiggy order #123456789 is successful. Order from: Burger King will be delivered by 7:45 PM.">Swiggy Order</div>
+            <div class="sample" data-sender="TX-KYCSMS" data-text="URGENT: Your account will be blocked. Update KYC immediately to avoid service disruption. Click here: bit.ly/upd8kyc">KYC Scam</div>
+            <div class="sample" data-sender="AX-PRIZEX" data-text="Congratulations! You've won a prize of Rs.10,00,000 in our lucky draw. To claim your prize, click here: tinyurl.com/claim-prize">Prize Scam</div>
+        </div>
+    </div>
+    
+    <div id="resultContainer" class="hidden">
+        <h3>Parser Result:</h3>
+        <pre id="result"></pre>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const senderInput = document.getElementById('sender');
+            const smsInput = document.getElementById('sms');
+            const parseBtn = document.getElementById('parseBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const resultContainer = document.getElementById('resultContainer');
+            const resultOutput = document.getElementById('result');
+            const samples = document.querySelectorAll('.sample');
+            
+            // Sample message click
+            samples.forEach(sample => {
+                sample.addEventListener('click', function() {
+                    senderInput.value = this.dataset.sender;
+                    smsInput.value = this.dataset.text;
+                });
+            });
+            
+            // Parse button click
+            parseBtn.addEventListener('click', async function() {
+                const smsText = smsInput.value.trim();
+                const sender = senderInput.value.trim();
+                
+                if (!smsText) {
+                    alert('Please enter an SMS message');
+                    return;
+                }
+                
+                parseBtn.textContent = 'Parsing...';
+                parseBtn.disabled = true;
+                
+                try {
+                    const response = await fetch('http://localhost:5001/parse_sms', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            sms_text: smsText,
+                            sender: sender
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const data = await response.json();
+                    resultOutput.textContent = JSON.stringify(data, null, 2);
+                    resultContainer.classList.remove('hidden');
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error: ' + error.message);
+                } finally {
+                    parseBtn.textContent = 'Parse SMS';
+                    parseBtn.disabled = false;
+                }
+            });
+            
+            // Clear button click
+            clearBtn.addEventListener('click', function() {
+                senderInput.value = '';
+                smsInput.value = '';
+                resultContainer.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html> 

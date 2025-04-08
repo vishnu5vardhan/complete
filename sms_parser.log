@@ -1,0 +1,70 @@
+2025-04-08 12:04:18,437 - main_parser - INFO - Processing SMS: INR 689.00 spent using your HDFC Bank Credit Card ...
+2025-04-08 12:04:18,438 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:04:18,439 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:04:18,439 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_promotional', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators', "Invalid fraud_risk_level: . Must be one of ['none', 'low', 'medium', 'high']"]
+2025-04-08 12:04:18,439 - main_parser - INFO - Banking SMS detected, saving to transactions database
+2025-04-08 12:04:18,441 - main_parser - ERROR - Error saving transaction to database: table transactions has no column named transaction_amount
+Traceback (most recent call last):
+  File "/Users/vishn/Desktop/llm_recommender/main_parser.py", line 147, in save_transaction
+    cursor.execute('''
+    ~~~~~~~~~~~~~~^^^^
+    INSERT INTO transactions (
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<15 lines>...
+        datetime.datetime.now().isoformat()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ))
+    ^^
+sqlite3.OperationalError: table transactions has no column named transaction_amount
+2025-04-08 12:04:18,442 - main_parser - INFO - Processing SMS: Your OTP for transaction 123456 is 987654. Valid f...
+2025-04-08 12:04:18,442 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:04:18,443 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:04:18,443 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_promotional', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators', "Invalid fraud_risk_level: . Must be one of ['none', 'low', 'medium', 'high']"]
+2025-04-08 12:04:18,443 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:04:18,443 - main_parser - INFO - Processing SMS: URGENT: Your account will be blocked. Update KYC i...
+2025-04-08 12:04:18,443 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:04:18,443 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:04:18,443 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_promotional', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators', "Invalid fraud_risk_level: . Must be one of ['none', 'low', 'medium', 'high']"]
+2025-04-08 12:04:18,443 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:04:18,443 - main_parser - INFO - Processing SMS: ARROW End of Season Sale is HERE, Buy 2 Get 2 FREE...
+2025-04-08 12:04:18,443 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:04:18,443 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:04:18,443 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_promotional', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators', "Invalid fraud_risk_level: . Must be one of ['none', 'low', 'medium', 'high']"]
+2025-04-08 12:04:18,443 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:05:27,611 - main_parser - INFO - Database initialized successfully
+2025-04-08 12:05:27,612 - main_parser - INFO - Processing SMS: INR 689.00 spent using your HDFC Bank Credit Card ...
+2025-04-08 12:05:27,612 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:05:27,613 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:05:27,614 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators']
+2025-04-08 12:05:27,614 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:05:27,614 - main_parser - INFO - Processing SMS: Your OTP for transaction 123456 is 987654. Valid f...
+2025-04-08 12:05:27,614 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:05:27,615 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:05:27,615 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators']
+2025-04-08 12:05:27,615 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:05:27,615 - main_parser - INFO - Processing SMS: URGENT: Your account will be blocked. Update KYC i...
+2025-04-08 12:05:27,615 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:05:27,615 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:05:27,615 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators']
+2025-04-08 12:05:27,615 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:05:27,615 - main_parser - INFO - Processing SMS: ARROW End of Season Sale is HERE, Buy 2 Get 2 FREE...
+2025-04-08 12:05:27,616 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:05:27,616 - main_parser - INFO - Validating Gemini response
+2025-04-08 12:05:27,616 - main_parser - WARNING - Validation errors: ['Missing field: transaction_date', 'Missing field: is_fraud', 'Missing field: is_banking_sms', 'Missing field: fraud_risk_level', 'Missing field: suspicious_indicators']
+2025-04-08 12:05:27,616 - main_parser - INFO - Non-banking SMS that passed light filter, skipped
+2025-04-08 12:08:14,446 - main_parser - INFO - Database initialized successfully
+2025-04-08 12:08:14,446 - main_parser - INFO - Processing SMS: INR 689.00 spent using your HDFC Bank Credit Card ...
+2025-04-08 12:08:14,447 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:08:14,449 - main_parser - INFO - Banking SMS detected, saving to transactions database
+2025-04-08 12:08:14,451 - main_parser - INFO - Transaction saved to database, ID: 1
+2025-04-08 12:08:14,451 - main_parser - INFO - Processing SMS: Your OTP for transaction 123456 is 987654. Valid f...
+2025-04-08 12:08:14,451 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:08:14,453 - main_parser - WARNING - Fraud SMS detected, saving to fraud log
+2025-04-08 12:08:14,454 - main_parser - INFO - Fraud log saved to database, ID: 1
+2025-04-08 12:08:14,454 - main_parser - INFO - Processing SMS: URGENT: Your account will be blocked. Update KYC i...
+2025-04-08 12:08:14,454 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:08:14,454 - main_parser - WARNING - Fraud SMS detected, saving to fraud log
+2025-04-08 12:08:14,454 - main_parser - INFO - Fraud log saved to database, ID: 2
+2025-04-08 12:08:14,455 - main_parser - INFO - Processing SMS: ARROW End of Season Sale is HERE, Buy 2 Get 2 FREE...
+2025-04-08 12:08:14,455 - main_parser - INFO - SMS passed light filter, sending to Gemini API
+2025-04-08 12:08:14,455 - main_parser - INFO - Non-banking SMS that passed light filter, skipped

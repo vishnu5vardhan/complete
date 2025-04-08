@@ -41,7 +41,7 @@ function smsApp() {
         dayOfWeekChart: null,
         
         // API endpoint (change this to match your API server)
-        apiUrl: 'http://localhost:8000',
+        apiUrl: 'http://localhost:5001',
         
         // Lifecycle hooks
         init() {
@@ -69,25 +69,46 @@ function smsApp() {
             this.error = null;
             
             try {
-                const response = await fetch(`${this.apiUrl}/sms`, {
+                const response = await fetch(`${this.apiUrl}/parse_sms`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        sms_text: this.smsText
+                        sms_text: this.smsText,
+                        sender: '' // Adding empty sender parameter to match our API
                     })
                 });
                 
                 if (!response.ok) {
                     const errorData = await response.json();
-                    throw new Error(errorData.detail || 'Error processing SMS');
+                    throw new Error(errorData.detail || errorData.error || 'Error processing SMS');
                 }
                 
-                this.result = await response.json();
+                const rawData = await response.json();
+                console.log("Raw parser response:", rawData);
                 
-                // Track this interaction for analytics
-                this.trackAnalytics('sms_processed');
+                // Transform the response to match what the UI expects
+                this.result = {
+                    transaction: {
+                        amount: rawData.transaction.amount,
+                        transaction_type: rawData.transaction.type,
+                        account_masked: rawData.transaction.account,
+                        merchant_name: rawData.transaction.merchant,
+                        date: rawData.transaction.date,
+                        balance: rawData.transaction.balance
+                    },
+                    category: rawData.transaction.category || "Uncategorized",
+                    fraud_detection: rawData.fraud_detection,
+                    metadata: rawData.metadata
+                };
+                
+                // Track this interaction for analytics if the function exists
+                if (typeof this.trackAnalytics === 'function') {
+                    this.trackAnalytics('sms_processed');
+                } else {
+                    console.log('Analytics tracking: sms_processed');
+                }
                 
             } catch (err) {
                 console.error('Error:', err);
@@ -384,59 +405,34 @@ function smsApp() {
                 return 'Due tomorrow';
             } else if (diffDays > 0) {
                 return `Due in ${diffDays} days`;
-            } else if (diffDays === 0) {
-                return 'Due today';
             } else {
-                return `Due ${Math.abs(diffDays)} days ago`;
-            }
-        },
-        
-        async trackRecommendationClick(productName) {
-            try {
-                await fetch(`${this.apiUrl}/track-recommendation-click`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        product_name: productName
-                    })
-                });
-                
-                console.log(`Clicked on: ${productName}`);
-                
-            } catch (err) {
-                console.error('Error tracking click:', err);
-            }
-        },
-        
-        async trackAnalytics(action) {
-            // Simple analytics tracking
-            try {
-                console.log(`Tracked action: ${action}`);
-                // In a real app, you might send this to the server
-            } catch (err) {
-                console.error('Error tracking analytics:', err);
+                return 'Overdue';
             }
         },
         
         selectSampleSMS(option) {
             switch(option) {
                 case 1:
-                    this.smsText = 'Your card ending with 1234 has been debited for Rs.2500 at Swiggy on 05-04-2023. Available balance is Rs.45000.';
+                    this.smsText = 'Your a/c XX1234 is debited with Rs.2,500.00 on 15-04-2023 at Swiggy. Available balance: Rs.45,000.00. If not you, call 18001234567.';
                     break;
                 case 2:
-                    this.smsText = 'Rs.15000 credited to your account ending with 5678 on 06-04-2023. Updated balance: Rs.35000. Ref: NEFT/IMPS/RTG123456.';
+                    this.smsText = 'Rs.15,000.00 credited to your account ending with XX5678 on 16-04-2023. Updated balance: Rs.35,000.00. Ref: NEFT/IMPS/RTG123456.';
                     break;
                 case 3:
-                    this.smsText = 'Thank you for shopping at Amazon. Rs.3749 has been charged on your card ending with 9876 on 07-04-2023. Txn ID: TXN123456.';
+                    this.smsText = 'Thank you for shopping at Amazon. Rs.3,749.00 has been charged on your card ending with XX9876 on 17-04-2023. Txn ID: TXN123456.';
                     break;
                 case 4:
-                    this.smsText = 'Your Netflix subscription of Rs.649 has been charged to your HDFC Credit Card ending with 5432 on 10-04-2023. Available balance: Rs.58000.';
+                    this.smsText = 'URGENT: Your account will be blocked. Update KYC immediately to avoid service disruption. Click here: bit.ly/upd8kyc';
+                    break;
+                case 5:
+                    this.smsText = 'Congratulations! You\'ve won a prize of Rs.10,00,000 in our lucky draw. To claim your prize, click here: tinyurl.com/claim-prize';
+                    break;
+                case 6:
+                    this.smsText = 'Your Netflix subscription of Rs.649.00 has been charged to your HDFC Credit Card ending with XX5432 on 18-04-2023. Available balance: Rs.58,000.00.';
                     break;
                 default:
                     break;
             }
-        }
+        },
     };
-} 
+}

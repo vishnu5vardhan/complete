@@ -31,6 +31,11 @@
             <div class="container mx-auto px-4 py-6">
                 <h1 class="text-3xl font-bold">SMS Transaction Parser</h1>
                 <p class="text-blue-100">Extract, categorize, and get personalized recommendations</p>
+                <div class="mt-3 flex space-x-4">
+                    <a href="chat.html" class="text-white hover:underline">Chat Interface</a>
+                    <a href="bulk_sms.html" class="text-white hover:underline">Bulk SMS Processing</a>
+                    <a href="high_risk_sms.html" class="text-white hover:underline bg-red-700 px-2 py-1 rounded-md">High-Risk SMS</a>
+                </div>
             </div>
         </header>
         
@@ -96,6 +101,24 @@
                         >
                             Shopping Transaction
                         </button>
+                        <button 
+                            @click="selectSampleSMS(4)" 
+                            class="text-xs bg-red-100 hover:bg-red-200 py-1 px-3 rounded-full text-red-700"
+                        >
+                            KYC Scam
+                        </button>
+                        <button 
+                            @click="selectSampleSMS(5)" 
+                            class="text-xs bg-red-100 hover:bg-red-200 py-1 px-3 rounded-full text-red-700"
+                        >
+                            Prize Scam
+                        </button>
+                        <button 
+                            @click="selectSampleSMS(6)" 
+                            class="text-xs bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        >
+                            Subscription
+                        </button>
                     </div>
                 </div>
             </section>
@@ -153,27 +176,118 @@
                         </div>
                     </div>
                     
-                    <!-- User Profile & Summary -->
+                    <!-- Fraud Detection Results -->
                     <div class="bg-white rounded-lg shadow-md p-6">
-                        <h2 class="text-xl font-semibold mb-4">Financial Profile</h2>
+                        <h2 class="text-xl font-semibold mb-4">Fraud Analysis</h2>
                         
-                        <div x-show="result.archetype" class="mb-6">
-                            <h3 class="text-lg font-medium mb-2">Your Archetype</h3>
-                            <div class="bg-purple-100 text-purple-800 py-2 px-4 rounded-lg">
-                                <span class="font-semibold" x-text="result.archetype"></span>
+                        <div x-show="result.fraud_detection" class="space-y-4">
+                            <!-- Risk Level -->
+                            <div class="mb-4">
+                                <h3 class="text-base font-medium mb-2">Risk Level:</h3>
+                                <div class="flex items-center">
+                                    <span x-show="result.fraud_detection.risk_level === 'low'" 
+                                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                        <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Low Risk
+                                    </span>
+                                    <span x-show="result.fraud_detection.risk_level === 'medium'" 
+                                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+                                        <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Medium Risk
+                                    </span>
+                                    <span x-show="result.fraud_detection.risk_level === 'high'" 
+                                          class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+                                        <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        High Risk
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <!-- Suspicious Indicators -->
+                            <div x-show="result.fraud_detection.suspicious_indicators && result.fraud_detection.suspicious_indicators.length > 0">
+                                <h3 class="text-base font-medium mb-2">Suspicious Indicators:</h3>
+                                <ul class="list-disc pl-5 space-y-1 text-sm">
+                                    <template x-for="indicator in result.fraud_detection.suspicious_indicators" :key="indicator">
+                                        <li>
+                                            <span x-text="indicator.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())" class="text-gray-700"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                            
+                            <!-- Additional Checks -->
+                            <div class="space-y-2 mt-4">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 mr-2" :class="result.fraud_detection.is_valid_sender ? 'text-green-500' : 'text-red-500'">
+                                        <svg x-show="result.fraud_detection.is_valid_sender" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg x-show="!result.fraud_detection.is_valid_sender" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm" :class="result.fraud_detection.is_valid_sender ? 'text-gray-700' : 'text-red-700'">
+                                        <span x-show="result.fraud_detection.is_valid_sender">Valid sender identity</span>
+                                        <span x-show="!result.fraud_detection.is_valid_sender">Unknown or suspicious sender</span>
+                                    </span>
+                                </div>
+                                
+                                <div class="flex items-center">
+                                    <div class="w-6 h-6 mr-2" :class="result.fraud_detection.transaction_legitimate ? 'text-green-500' : 'text-red-500'">
+                                        <svg x-show="result.fraud_detection.transaction_legitimate" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <svg x-show="!result.fraud_detection.transaction_legitimate" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm" :class="result.fraud_detection.transaction_legitimate ? 'text-gray-700' : 'text-red-700'">
+                                        <span x-show="result.fraud_detection.transaction_legitimate">Transaction appears legitimate</span>
+                                        <span x-show="!result.fraud_detection.transaction_legitimate">Transaction may be fraudulent</span>
+                                    </span>
+                                </div>
+                                
+                                <div x-show="result.fraud_detection.contains_urls" class="flex items-center">
+                                    <div class="w-6 h-6 mr-2 text-red-500">
+                                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm text-red-700">Message contains suspicious URLs or links</span>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div x-show="result.summary">
-                            <h3 class="text-lg font-medium mb-2">Spending Summary</h3>
-                            <div class="space-y-2">
-                                <template x-for="(amount, category) in result.summary" :key="category">
-                                    <div class="flex justify-between items-center">
-                                        <span x-text="category"></span>
-                                        <span class="font-medium">₹<span x-text="amount.toLocaleString()"></span></span>
-                                    </div>
-                                </template>
-                            </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Financial Profile Section (moved to after fraud detection) -->
+            <section x-show="result && (result.archetype || result.summary)" class="mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold mb-4">Financial Profile</h2>
+                    
+                    <div x-show="result.archetype" class="mb-6">
+                        <h3 class="text-lg font-medium mb-2">Your Archetype</h3>
+                        <div class="bg-purple-100 text-purple-800 py-2 px-4 rounded-lg">
+                            <span class="font-semibold" x-text="result.archetype"></span>
+                        </div>
+                    </div>
+                    
+                    <div x-show="result.summary">
+                        <h3 class="text-lg font-medium mb-2">Spending Summary</h3>
+                        <div class="space-y-2">
+                            <template x-for="(amount, category) in result.summary" :key="category">
+                                <div class="flex justify-between items-center">
+                                    <span x-text="category"></span>
+                                    <span class="font-medium">₹<span x-text="amount.toLocaleString()"></span></span>
+                                </div>
+                            </template>
                         </div>
                     </div>
                 </div>

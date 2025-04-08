@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}SMS Parser - Fraud Detection{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-{{ 'danger' if result.is_fraud else 'warning' }}">
+                <h5 class="card-title mb-0">Fraud Detection Results</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Risk Assessment</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Risk Level:</strong>
+                                <span class="badge bg-{{ 'danger' if result.risk_level == 'high' else 'warning' if result.risk_level == 'medium' else 'success' }}">
+                                    {{ result.risk_level|title }}
+                                </span>
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Is Fraud:</strong>
+                                <span class="badge bg-{{ 'danger' if result.is_fraud else 'success' }}">
+                                    {{ 'Yes' if result.is_fraud else 'No' }}
+                                </span>
+                            </li>
+                            {% if result.confidence %}
+                            <li class="list-group-item">
+                                <strong>Confidence:</strong>
+                                {{ "%.2f"|format(result.confidence * 100) }}%
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Risk Indicators</h6>
+                        {% if result.flagged_keywords %}
+                        <div class="alert alert-warning">
+                            <strong>Flagged Keywords:</strong>
+                            <ul class="mb-0">
+                                {% for keyword in result.flagged_keywords %}
+                                <li>{{ keyword }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if result.reasons %}
+                        <div class="alert alert-info">
+                            <strong>Reasons:</strong>
+                            <ul class="mb-0">
+                                {% for reason in result.reasons %}
+                                <li>{{ reason }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if result.is_fraud %}
+                <div class="alert alert-danger mt-3">
+                    <h6>Recommended Actions:</h6>
+                    <ol>
+                        <li>Do not click on any links in the message</li>
+                        <li>Do not share any personal or financial information</li>
+                        <li>Contact your bank immediately using official channels</li>
+                        <li>Report the message to your bank's fraud department</li>
+                    </ol>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Original SMS</h5>
+            </div>
+            <div class="card-body">
+                <pre class="mb-0">{{ sms_text }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

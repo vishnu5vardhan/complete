@@ -1,0 +1,92 @@
+merchant_name,category
+Amazon,Shopping
+Flipkart,Shopping
+Myntra,Shopping
+Ajio,Shopping
+Snapdeal,Shopping
+Tata Cliq,Shopping
+Nykaa,Beauty
+Big Basket,Groceries
+Grofers,Groceries
+JioMart,Groceries
+Swiggy,Food Delivery
+Zomato,Food Delivery
+Uber Eats,Food Delivery
+Uber,Transportation
+Ola,Transportation
+Makemytrip,Travel
+Goibibo,Travel
+Yatra,Travel
+IRCTC,Travel
+BookMyShow,Entertainment
+PVR,Entertainment
+INOX,Entertainment
+Netflix,Entertainment
+Amazon Prime,Entertainment
+Hotstar,Entertainment
+Spotify,Entertainment
+JioSaavn,Entertainment
+Gaana,Entertainment
+Wynk,Entertainment
+PhonePe,Payments
+Paytm,Payments
+Google Pay,Payments
+Amazon Pay,Payments
+Airtel,Telecom
+Jio,Telecom
+Vodafone,Telecom
+BSNL,Telecom
+TATA Sky,DTH
+Airtel DTH,DTH
+Dish TV,DTH
+Sun Direct,DTH
+HDFC Bank,Banking
+ICICI Bank,Banking
+SBI Bank,Banking
+Axis Bank,Banking
+Kotak Bank,Banking
+Yes Bank,Banking
+Punjab National Bank,Banking
+Canara Bank,Banking
+Bank of Baroda,Banking
+Union Bank,Banking
+IDBI Bank,Banking
+IndusInd Bank,Banking
+Federal Bank,Banking
+RBL Bank,Banking
+Citibank,Banking
+Standard Chartered,Banking
+HSBC,Banking
+LIC,Insurance
+HDFC Life,Insurance
+ICICI Prudential,Insurance
+SBI Life,Insurance
+Bajaj Allianz,Insurance
+Max Life,Insurance
+Aditya Birla Health,Insurance
+Star Health,Insurance
+Apollo Pharmacy,Healthcare
+Medlife,Healthcare
+PharmEasy,Healthcare
+1mg,Healthcare
+Netmeds,Healthcare
+Practo,Healthcare
+MediBuddy,Healthcare
+DocOnline,Healthcare
+Reliance Digital,Electronics
+Croma,Electronics
+Vijay Sales,Electronics
+Poorvika,Electronics
+Sangeetha Mobiles,Electronics
+Adidas,Apparel
+Nike,Apparel
+Puma,Apparel
+Reebok,Apparel
+Decathlon,Sports
+Cult.fit,Fitness
+FreshToHome,Groceries
+Licious,Groceries
+Urban Company,Services
+Dunzo,Services
+Daily Hunt,News
+InShorts,News 

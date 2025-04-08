@@ -1,0 +1,12 @@
+# High-Risk SMS Messages - Created on 2025-04-08 15:21:07.848178
+
+[2025-04-08 17:13:23] RISK LEVEL: high
+SENDER: TX-KYCSMS
+INDICATORS: kyc_scam, phishing_attempt, shortened_url
+SMS: URGENT: Your account will be blocked. Update KYC immediately to avoid service disruption. Click here: bit.ly/upd8kyc
+--------------------------------------------------------------------------------
+[2025-04-08 17:21:12] RISK LEVEL: high
+SENDER: TX-KYCSMS
+INDICATORS: kyc_scam, phishing_attempt, shortened_url
+SMS: URGENT: Your account will be blocked. Update KYC immediately to avoid service disruption. Click here: bit.ly/upd8kyc
+--------------------------------------------------------------------------------

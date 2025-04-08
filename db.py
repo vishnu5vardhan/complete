@@ -97,6 +97,37 @@ def init_db():
         )
         ''')
         
+        # Create user_goals table for storing financial goals
+        conn.execute('''
+        CREATE TABLE IF NOT EXISTS user_goals (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER DEFAULT 1,
+            goal_type TEXT NOT NULL,
+            target_amount REAL NOT NULL,
+            current_amount REAL DEFAULT 0.0,
+            target_date TEXT,
+            status TEXT DEFAULT 'active',
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        ''')
+        
+        # Create reminders table for recurring expenses
+        conn.execute('''
+        CREATE TABLE IF NOT EXISTS reminders (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER DEFAULT 1,
+            reminder_type TEXT NOT NULL,
+            merchant TEXT NOT NULL,
+            amount REAL NOT NULL,
+            account_masked TEXT,
+            due_date TEXT NOT NULL,
+            is_paid INTEGER DEFAULT 0,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            modified_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        ''')
+        
         # Insert some known subscription merchants if the table is empty
         cursor = conn.cursor()
         cursor.execute("SELECT COUNT(*) FROM subscription_merchants")
@@ -179,7 +210,10 @@ def insert_transaction(transaction: Dict[str, Any], sms_text: str) -> int:
         # Check for recurring transactions
         detect_recurring_transactions(
             transaction.get('merchant_name', ''),
-            transaction.get('account_masked', '')
+            transaction.get('amount', 0),
+            transaction.get('account_masked', ''),
+            transaction.get('date', ''),
+            transaction.get('user_id', 1)
         )
         
         return transaction_id
@@ -290,7 +324,9 @@ def update_balance(account_masked: str, amount: float, transaction_type: str, ex
         else:
             # Calculate new balance based on transaction
             if result:
-                current_balance = result[0]
+                # Convert sqlite3.Row to dict to avoid mutation issues
+                result_dict = dict(result)
+                current_balance = result_dict['current_balance']
                 new_balance = current_balance
                 
                 if transaction_type.lower() == 'credit':
@@ -337,10 +373,12 @@ def get_balances(user_id: int = 1) -> List[Dict[str, Any]]:
         
         balances = []
         for row in cursor:
+            # Convert sqlite3.Row to dict before accessing
+            row_dict = dict(row)
             balances.append({
-                "account": row['account_masked'],
-                "balance": row['current_balance'],
-                "last_updated": row['last_updated']
+                "account": row_dict['account_masked'],
+                "balance": row_dict['current_balance'],
+                "last_updated": row_dict['last_updated']
             })
         
         return balances
@@ -418,96 +456,190 @@ def calculate_next_due_date(date_str: str) -> str:
         # Return date 30 days from today if error
         return (datetime.datetime.now() + datetime.timedelta(days=30)).strftime("%Y-%m-%d")
 
-def detect_recurring_transactions(merchant: str, account_masked: str):
+def detect_recurring_transactions(merchant: str, amount: float, account_masked: str, 
+                                 transaction_date: str, user_id: int = 1) -> bool:
     """
-    Detect recurring transactions by analyzing past transactions
+    Detect if a transaction is recurring based on past transactions
     
     Args:
         merchant: Merchant name
-        account_masked: Masked account number
-    """
-    if not merchant or not account_masked:
-        return
+        amount: Transaction amount
+        account_masked: Account number (masked)
+        transaction_date: Transaction date
+        user_id: User ID (default: 1)
         
+    Returns:
+        True if recurring pattern detected, False otherwise
+    """
     conn = get_db_connection()
     try:
-        cursor = conn.cursor()
+        # Get previous transactions with the same merchant and similar amount
+        amount_margin = amount * 0.05  # 5% margin for amount variations
         
-        # Find transactions for this merchant/account
-        cursor.execute('''
-        SELECT date, amount FROM transactions 
-        WHERE merchant_name = ? AND account_masked = ?
+        cursor = conn.execute('''
+        SELECT date FROM transactions
+        WHERE user_id = ? AND merchant_name = ? AND 
+              ABS(amount - ?) <= ? AND
+              account_masked = ?
         ORDER BY date DESC
-        ''', (merchant, account_masked))
+        LIMIT 3
+        ''', (user_id, merchant, amount, amount_margin, account_masked))
         
-        transactions = cursor.fetchall()
+        dates = []
+        for row in cursor:
+            if row['date']:
+                try:
+                    dates.append(datetime.datetime.strptime(row['date'], "%Y-%m-%d"))
+                except Exception:
+                    pass
         
-        # Need at least 2 transactions to detect recurring pattern
-        if len(transactions) >= 2:
-            dates = [datetime.datetime.strptime(t['date'], "%Y-%m-%d") for t in transactions]
+        # Need at least 2 previous transactions to detect a pattern
+        if len(dates) < 2:
+            return False
             
-            # Calculate intervals between transactions
-            intervals = []
-            for i in range(len(dates)-1):
-                interval = abs((dates[i] - dates[i+1]).days)
+        # Calculate average interval
+        intervals = []
+        for i in range(len(dates) - 1):
+            interval = abs((dates[i] - dates[i+1]).days)
+            if interval > 0:
                 intervals.append(interval)
-            
-            # Check if intervals are similar (28-32 days)
-            is_recurring = any(28 <= interval <= 32 for interval in intervals)
-            
-            if is_recurring:
-                # Update subscription to mark as recurring
-                cursor.execute('''
-                UPDATE subscriptions 
-                SET is_recurring = 1
-                WHERE merchant = ? AND account_masked = ?
-                ''', (merchant, account_masked))
                 
-                conn.commit()
+        if not intervals:
+            return False
+            
+        avg_interval = sum(intervals) / len(intervals)
+        
+        # Check if intervals are consistent (within 20% of each other)
+        if len(intervals) >= 2:
+            variation = max(intervals) - min(intervals)
+            if variation / avg_interval > 0.2:
+                return False
+        
+        # Consider it recurring if average interval is between 25 and 35 days (monthly)
+        # or between 6 and 8 days (weekly)
+        is_recurring = (25 <= avg_interval <= 35) or (6 <= avg_interval <= 8)
+        
+        if is_recurring:
+            # Calculate next due date
+            next_due_date = (datetime.datetime.strptime(transaction_date, "%Y-%m-%d") + 
+                           datetime.timedelta(days=round(avg_interval))).strftime("%Y-%m-%d")
+            
+            # Add reminder
+            add_reminder({
+                'reminder_type': 'subscription' if avg_interval < 32 else 'bill',
+                'merchant': merchant,
+                'amount': amount,
+                'account_masked': account_masked,
+                'due_date': next_due_date
+            }, user_id)
+            
+        return is_recurring
     except Exception as e:
         print(f"Error detecting recurring transactions: {e}")
+        return False
     finally:
         conn.close()
 
-def get_upcoming_reminders(days_ahead: int = 3) -> List[Dict[str, Any]]:
+def add_reminder(reminder_data: Dict[str, Any], user_id: int = 1) -> int:
     """
-    Get upcoming subscription payments due in the next few days
+    Add a payment reminder
     
     Args:
-        days_ahead: Number of days to look ahead
+        reminder_data: Dictionary with reminder details
+            - reminder_type: Type of reminder (bill, subscription, emi)
+            - merchant: Merchant name
+            - amount: Payment amount
+            - due_date: Due date
+            - account_masked: Account number (masked)
+        user_id: User ID (default: 1)
         
     Returns:
-        List of upcoming subscription payments
+        ID of the created reminder
     """
     conn = get_db_connection()
     try:
         cursor = conn.cursor()
+        cursor.execute('''
+        INSERT INTO reminders 
+        (user_id, reminder_type, merchant, amount, account_masked, due_date)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ''', (
+            user_id,
+            reminder_data.get('reminder_type', 'bill'),
+            reminder_data.get('merchant', ''),
+            reminder_data.get('amount', 0),
+            reminder_data.get('account_masked', ''),
+            reminder_data.get('due_date', '')
+        ))
+        reminder_id = cursor.lastrowid
+        conn.commit()
+        return reminder_id
+    except Exception as e:
+        print(f"Error adding reminder: {e}")
+        conn.rollback()
+        return 0
+    finally:
+        conn.close()
+
+def get_upcoming_reminders(days_ahead: int = 3, user_id: int = 1) -> List[Dict[str, Any]]:
+    """
+    Get upcoming payment reminders
+    
+    Args:
+        days_ahead: Number of days to look ahead (default: 3)
+        user_id: User ID (default: 1)
         
-        # Calculate the date range
+    Returns:
+        List of reminder dictionaries
+    """
+    conn = get_db_connection()
+    reminders = []
+    try:
         today = datetime.datetime.now().strftime("%Y-%m-%d")
         future_date = (datetime.datetime.now() + datetime.timedelta(days=days_ahead)).strftime("%Y-%m-%d")
         
-        cursor.execute('''
-        SELECT merchant, amount, account_masked, next_due, is_recurring
-        FROM subscriptions
-        WHERE next_due BETWEEN ? AND ?
-        ORDER BY next_due
-        ''', (today, future_date))
+        cursor = conn.execute('''
+        SELECT id, reminder_type, merchant, amount, account_masked, due_date, is_paid
+        FROM reminders
+        WHERE user_id = ? AND is_paid = 0 AND due_date BETWEEN ? AND ?
+        ORDER BY due_date ASC
+        ''', (user_id, today, future_date))
         
-        reminders = []
         for row in cursor:
-            reminders.append({
-                "merchant": row['merchant'],
-                "amount": row['amount'],
-                "account": row['account_masked'],
-                "due_date": row['next_due'],
-                "recurring": bool(row['is_recurring'])
-            })
-        
+            reminders.append(dict(row))
+            
         return reminders
     except Exception as e:
         print(f"Error getting upcoming reminders: {e}")
         return []
+    finally:
+        conn.close()
+
+def mark_reminder_paid(reminder_id: int, user_id: int = 1) -> bool:
+    """
+    Mark a reminder as paid
+    
+    Args:
+        reminder_id: Reminder ID
+        user_id: User ID (default: 1)
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    conn = get_db_connection()
+    try:
+        conn.execute('''
+        UPDATE reminders
+        SET is_paid = 1, modified_at = CURRENT_TIMESTAMP
+        WHERE id = ? AND user_id = ?
+        ''', (reminder_id, user_id))
+        
+        conn.commit()
+        return True
+    except Exception as e:
+        print(f"Error marking reminder as paid: {e}")
+        conn.rollback()
+        return False
     finally:
         conn.close()
 
@@ -566,7 +698,9 @@ def get_financial_summary() -> Dict[str, float]:
         
         summary = {}
         for row in cursor:
-            summary[row['category']] = row['total']
+            # Convert sqlite3.Row to dict before accessing
+            row_dict = dict(row)
+            summary[row_dict['category']] = row_dict['total']
         
         return summary
     except Exception as e:
@@ -837,6 +971,180 @@ def get_total_spending() -> float:
         return result['total'] if result['total'] else 0
     except Exception as e:
         print(f"Error getting total spending: {e}")
+        return 0
+    finally:
+        conn.close()
+
+def set_user_goal(goal_data: Dict[str, Any], user_id: int = 1) -> int:
+    """
+    Set a financial goal for a user
+    
+    Args:
+        goal_data: Dictionary with goal details
+            - goal_type: Type of goal (e.g., trip, emergency fund)
+            - target_amount: Target amount to save
+            - target_date: Target date to achieve the goal
+        user_id: User ID (default: 1)
+        
+    Returns:
+        ID of the created goal
+    """
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute('''
+        INSERT INTO user_goals 
+        (user_id, goal_type, target_amount, target_date, status, current_amount)
+        VALUES (?, ?, ?, ?, ?, ?)
+        ''', (
+            user_id,
+            goal_data.get('goal_type', 'Savings'),
+            goal_data.get('target_amount', 0),
+            goal_data.get('target_date', ''),
+            'active',
+            goal_data.get('current_amount', 0)
+        ))
+        goal_id = cursor.lastrowid
+        conn.commit()
+        return goal_id
+    except Exception as e:
+        print(f"Error setting user goal: {e}")
+        conn.rollback()
+        return 0
+    finally:
+        conn.close()
+
+def get_user_goals(user_id: int = 1, include_achieved: bool = False) -> List[Dict[str, Any]]:
+    """
+    Get all financial goals for a user
+    
+    Args:
+        user_id: User ID (default: 1)
+        include_achieved: Whether to include achieved goals (default: False)
+        
+    Returns:
+        List of goals as dictionaries
+    """
+    conn = get_db_connection()
+    goals = []
+    try:
+        status_filter = "" if include_achieved else "AND status = 'active'"
+        
+        cursor = conn.execute(f'''
+        SELECT id, goal_type, target_amount, current_amount, target_date, status, created_at
+        FROM user_goals
+        WHERE user_id = ? {status_filter}
+        ORDER BY created_at DESC
+        ''', (user_id,))
+        
+        for row in cursor:
+            goal = dict(row)
+            
+            # Calculate progress percentage
+            if goal['target_amount'] > 0:
+                goal['progress'] = (goal['current_amount'] / goal['target_amount']) * 100
+            else:
+                goal['progress'] = 0
+                
+            # Calculate days remaining if target_date exists
+            if goal['target_date']:
+                try:
+                    target_date = datetime.datetime.strptime(goal['target_date'], "%Y-%m-%d")
+                    today = datetime.datetime.now()
+                    days_remaining = (target_date - today).days
+                    goal['days_remaining'] = max(0, days_remaining)
+                except Exception:
+                    goal['days_remaining'] = None
+            
+            goals.append(goal)
+            
+        return goals
+    except Exception as e:
+        print(f"Error getting user goals: {e}")
+        return []
+    finally:
+        conn.close()
+
+def update_goal_progress(goal_id: int, amount_added: float, user_id: int = 1) -> bool:
+    """
+    Update progress for a financial goal
+    
+    Args:
+        goal_id: Goal ID
+        amount_added: Amount to add to current progress
+        user_id: User ID (default: 1)
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    conn = get_db_connection()
+    try:
+        # Get current amount
+        cursor = conn.execute('''
+        SELECT current_amount, target_amount FROM user_goals
+        WHERE id = ? AND user_id = ?
+        ''', (goal_id, user_id))
+        
+        result = cursor.fetchone()
+        if not result:
+            print(f"Goal not found: {goal_id}")
+            return False
+            
+        current_amount = result['current_amount'] + amount_added
+        target_amount = result['target_amount']
+        
+        # Update status if target reached
+        status = 'achieved' if current_amount >= target_amount else 'active'
+        
+        # Update goal
+        conn.execute('''
+        UPDATE user_goals 
+        SET current_amount = ?, status = ?, modified_at = CURRENT_TIMESTAMP
+        WHERE id = ? AND user_id = ?
+        ''', (current_amount, status, goal_id, user_id))
+        
+        conn.commit()
+        return True
+    except Exception as e:
+        print(f"Error updating goal progress: {e}")
+        conn.rollback()
+        return False
+    finally:
+        conn.close()
+
+def get_total_income(month: Optional[str] = None) -> float:
+    """
+    Get total income (credits) for a user
+    
+    Args:
+        month: Month in YYYY-MM format (optional)
+        
+    Returns:
+        Total income amount
+    """
+    conn = get_db_connection()
+    try:
+        cursor = conn.cursor()
+        
+        # Date filter condition
+        date_condition = ""
+        params = []
+        
+        if month:
+            date_condition = "AND strftime('%Y-%m', date) = ?"
+            params.append(month)
+        
+        # Get total credits
+        cursor.execute(f'''
+        SELECT SUM(amount) as total
+        FROM transactions
+        WHERE transaction_type = 'credit' {date_condition}
+        ''', params)
+        
+        result = cursor.fetchone()
+        return result['total'] or 0
+    except Exception as e:
+        print(f"Error getting total income: {e}")
         return 0
     finally:
         conn.close()

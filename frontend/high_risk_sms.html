@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Risk SMS Messages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <header class="bg-red-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">High-Risk SMS Messages</h1>
+            <p class="text-red-100">Potentially fraudulent messages detected by the system</p>
+            <div class="mt-3 flex space-x-4">
+                <a href="index.html" class="text-white hover:underline">Back to SMS Parser</a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Detected Fraudulent Messages</h2>
+                <div>
+                    <button id="refreshBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg focus:outline-none transition duration-300">
+                        Refresh
+                    </button>
+                </div>
+            </div>
+            
+            <div id="messagesContainer" class="space-y-4">
+                <p id="loadingMessage" class="text-gray-500">Loading messages...</p>
+                <p id="noMessagesMessage" class="hidden text-gray-500">No high-risk messages have been detected yet.</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>SMS Transaction Parser & Fraud Detection System</p>
+            <p class="text-sm text-gray-400 mt-2">Built with Flask and Gemini AI</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messagesContainer = document.getElementById('messagesContainer');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const noMessagesMessage = document.getElementById('noMessagesMessage');
+            const refreshBtn = document.getElementById('refreshBtn');
+            
+            // Function to load high-risk SMS messages
+            async function loadHighRiskMessages() {
+                loadingMessage.classList.remove('hidden');
+                noMessagesMessage.classList.add('hidden');
+                
+                // Clear previous messages
+                const previousMessages = document.querySelectorAll('.message-card');
+                previousMessages.forEach(element => element.remove());
+                
+                try {
+                    const response = await fetch('http://localhost:5001/high-risk-sms');
+                    
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    loadingMessage.classList.add('hidden');
+                    
+                    if (data.count === 0) {
+                        noMessagesMessage.classList.remove('hidden');
+                        return;
+                    }
+                    
+                    // Display messages
+                    data.messages.forEach(message => {
+                        const messageCard = document.createElement('div');
+                        messageCard.className = 'message-card bg-red-50 border border-red-200 rounded-lg p-4';
+                        
+                        // Create HTML for the message card
+                        messageCard.innerHTML = `
+                            <div class="flex justify-between items-start">
+                                <span class="font-medium text-red-700">${message.timestamp}</span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                    High Risk
+                                </span>
+                            </div>
+                            <div class="mt-2">
+                                <p class="font-medium">Sender: <span class="font-normal">${message.sender}</span></p>
+                                <p class="font-medium mt-1">Indicators: <span class="font-normal">${message.indicators}</span></p>
+                                <p class="mt-3 p-3 bg-white rounded border border-red-100 text-gray-800">${message.sms}</p>
+                            </div>
+                        `;
+                        
+                        messagesContainer.appendChild(messageCard);
+                    });
+                    
+                } catch (error) {
+                    console.error('Error loading messages:', error);
+                    loadingMessage.classList.add('hidden');
+                    
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'bg-red-100 text-red-700 p-3 rounded';
+                    errorMessage.textContent = `Error loading messages: ${error.message}`;
+                    messagesContainer.appendChild(errorMessage);
+                }
+            }
+            
+            // Initial load
+            loadHighRiskMessages();
+            
+            // Refresh button click
+            refreshBtn.addEventListener('click', loadHighRiskMessages);
+        });
+    </script>
+</body>
+</html> 

@@ -1,180 +1,106 @@
-# SMS Transaction Parser and Recommendation System
+# SMS Parser
 
-A complete system for parsing financial SMS messages, extracting transaction details, categorizing merchants, classifying user archetypes, and providing personalized product recommendations.
+A comprehensive SMS parser for banking transactions, promotional messages, and fraud detection.
 
 ## Features
 
-- **SMS Parsing**: Extract transaction details from raw SMS messages
-- **Transaction Categorization**: Automatically categorize transactions based on merchant
-- **Financial Archetypes**: Classify users into financial archetypes based on spending patterns
-- **Product Recommendations**: Provide personalized credit card recommendations based on spending
-- **Multiple Interfaces**: CLI, API, and Web UI
-- **Analytics**: Track user interactions and gather insights
-- **LangChain Integration**: Optional LangChain-powered workflows for enhanced capabilities
+- Parse banking transaction SMS messages
+- Detect promotional SMS messages
+- Identify potential fraud in SMS messages
+- Light filtering to quickly identify irrelevant messages
+- Fallback parsing when API is unavailable
+- Database storage for transactions and fraud logs
+- Web interface for easy interaction
+- CLI tool for command-line usage
 
-## System Architecture
+## Installation
 
-- **Enhanced SMS Parser**: Core processing engine powered by Gemini AI
-- **LangChain Integration**: Optional structured processing workflows using LangChain
-- **SQLite Database**: Persistent storage for transactions and analytics
-- **FastAPI Server**: RESTful API for integration
-- **CLI Tool**: Command-line interface for batch processing
-- **Web Frontend**: User-friendly interface for interaction
-- **Background Service**: Real-time SMS monitoring and processing
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/sms-parser.git
+cd sms-parser
+```
 
-## Setup
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
 
-1. **Clone the repository:**
-   ```
-   git clone <repository-url>
-   cd sms-transaction-parser
-   ```
-
-2. **Create a virtual environment:**
-   ```
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
-
-3. **Install dependencies:**
-   ```
-   pip install -r requirements.txt
-   ```
-
-4. **Configure environment variables:**
-   Create a `.env` file with your Gemini API key:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
-
-5. **Initialize the database:**
-   ```
-   python db.py
-   ```
+3. Set up environment variables:
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
 
 ## Usage
 
-### Command Line Interface
+### CLI
 
-Process a single SMS:
-```
-python cli.py -s "Your SMS message here"
-```
+```bash
+# Parse a single SMS
+sms-parser -s "Your account XX1234 has been debited with Rs.1500.00" -f HDFCBK
 
-Process multiple SMS from a file:
-```
-python cli.py -f path/to/sms_file.txt -o results.json
-```
+# Parse with verbose output
+sms-parser -s "Your SMS text here" -f SENDER -v
 
-Check account balances:
-```
-python cli.py -b
+# Output as JSON
+sms-parser -s "Your SMS text here" -f SENDER -j
 ```
 
-View financial insights:
-```
-python cli.py -i
-```
+### Web Interface
 
-### API Server
-
-Start the API server:
-```
-python api.py
+```bash
+# Start the web server
+python sms_web.py
 ```
 
-The server will run at `http://localhost:8000` with the following endpoints:
+Then open your browser to `http://localhost:5000`
 
-- `POST /sms`: Process an SMS message
-- `GET /summary`: Get financial summary and archetype
-- `GET /recommendations`: Get product recommendations
-- `GET /transactions`: Get recent transactions
-- `GET /analytics`: Get analytics data
-- `GET /balance`: Get account balances
-- `POST /question`: Process financial questions
-- `POST /background/enqueue`: Add SMS to background processing queue
-- `GET /background/status`: Get background service status
-- `POST /background/start`: Start background service
-- `POST /background/stop`: Stop background service
-
-Interactive API documentation available at `http://localhost:8000/docs`
-
-### Web Frontend
-
-1. Start the API server:
-   ```
-   python api.py
-   ```
-
-2. Open `frontend/chat.html` in your browser for the interactive chat interface
-
-## Components
-
-- `enhanced_sms_parser.py`: Core engine for SMS parsing and enhancement
-- `langchain_wrapper.py`: LangChain integration for structured data extraction
-- `db.py`: Database utilities for SQLite
-- `cli.py`: Command-line interface
-- `api.py`: FastAPI server
-- `background_service.py`: Real-time SMS monitoring service
-- `frontend/`: Web interface files
-- `services/`: Supporting services (merchant mapping, transaction type detection, etc.)
-
-## LangChain Integration
-
-The system now supports LangChain integration for enhanced capabilities:
+### Python API
 
 ```python
-# Using the LangChain wrapper
-from langchain_wrapper import ask_gemini, extract_structured_data
+from sms_parser.cli.main import process_sms
 
-# Simple query with LangChain
-response = ask_gemini("What's the best credit card for travel?")
-
-# Structured data extraction
-schema = {
-    "type": "object",
-    "properties": {
-        "name": {"type": "string"},
-        "age": {"type": "number"}
-    }
-}
-data = extract_structured_data("John Doe is 30 years old", schema)
+result = process_sms("Your SMS text here", sender="SENDER")
+print(result)
 ```
 
-To test the LangChain integration:
+## Project Structure
+
 ```
-python test_langchain.py
+sms_parser/
+├── cli/                # Command-line interface
+├── core/               # Core functionality
+│   ├── config.py      # Configuration settings
+│   ├── database.py    # Database operations
+│   └── logger.py      # Logging setup
+├── detectors/          # Detection modules
+│   ├── fraud_detector.py
+│   └── promo_detector.py
+├── parsers/           # Parsing modules
+│   ├── base_parser.py
+│   ├── fallback_parser.py
+│   ├── gemini_parser.py
+│   └── light_filter.py
+└── tests/             # Test files
+    └── test_sms_examples.py
 ```
 
-The integration maintains the same outputs and behavior as the direct Gemini API implementation while adding structured extraction capabilities.
+## Testing
 
-## Analytics
-
-The system tracks:
-- Archetype distribution
-- Category spending totals
-- Recommendation clicks
-
-View analytics via the `/analytics` API endpoint or run:
-```
-curl http://localhost:8000/analytics
+Run the test suite:
+```bash
+python -m pytest
 ```
 
-## Example
+## Contributing
 
-```python
-from enhanced_sms_parser import run_end_to_end
-
-# Process an SMS
-result = run_end_to_end("Your card ending with 1234 has been debited for Rs.2500 at Swiggy on 05-04-2023.")
-
-# Print results
-print(f"Transaction: {result['transaction']['amount']} {result['transaction']['transaction_type']}")
-print(f"Category: {result['category']}")
-print(f"Archetype: {result['archetype']}")
-print(f"Recommendations: {result['top_3_recommendations']}")
-```
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the LICENSE file for details.

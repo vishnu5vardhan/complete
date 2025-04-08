@@ -1,0 +1,14 @@
+INFO:__main__:Imported parse_sms from enhanced_sms_parser.py
+DEBUG:__main__:GEMINI_API_KEY set: True
+DEBUG:__main__:USE_MOCK_DATA: None
+DEBUG:__main__:ENABLE_MOCK_MODE: None
+INFO:__main__:Starting Flask app on port 5001
+Loaded 56 transaction indicators
+Loaded 504 merchants from main file
+Loaded additional merchants from short file
+Loaded transaction indicators from /Users/vishn/Desktop/llm_recommender/data/transaction_indicator_keywords.csv
+Gemini API configured successfully
+ * Serving Flask app 'app'
+ * Debug mode: on
+Address already in use
+Port 5001 is in use by another program. Either identify and stop that program, or start the server with a different port.

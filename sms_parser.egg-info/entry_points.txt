@@ -1,0 +1,2 @@
+[console_scripts]
+sms-parser = sms_parser.cli.main:main

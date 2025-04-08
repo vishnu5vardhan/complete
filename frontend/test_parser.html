@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Parser Test Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .badge-low {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        
+        .badge-medium {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+        
+        .badge-high {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-4">
+    <div class="container mx-auto">
+        <header class="bg-blue-600 text-white shadow-lg rounded-lg p-6 mb-6">
+            <h1 class="text-3xl font-bold">SMS Parser Test Interface</h1>
+            <p class="text-blue-100">Test your SMS parser implementation directly</p>
+        </header>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Enter SMS to Parse</h2>
+            
+            <div class="mb-4">
+                <label for="sender" class="block text-sm font-medium text-gray-700 mb-1">Sender (Optional):</label>
+                <input type="text" id="sender" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="e.g., HDFCBANK, SBIINB">
+            </div>
+            
+            <div class="mb-4">
+                <label for="smsText" class="block text-sm font-medium text-gray-700 mb-1">SMS Text:</label>
+                <textarea id="smsText" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    rows="4" placeholder="Paste your SMS here..."></textarea>
+            </div>
+            
+            <div class="flex space-x-4 mb-4">
+                <button id="parseBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
+                    Parse SMS
+                </button>
+                
+                <button id="clearBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 transition duration-300">
+                    Clear
+                </button>
+            </div>
+            
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Sample Messages:</h3>
+                <div class="flex flex-wrap gap-2">
+                    <button class="sample-btn text-sm bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        data-sender="HDFCBANK" 
+                        data-sms="Dear Customer, Rs.5000.00 has been credited to your a/c XXXXXXXX1234 on 15-04-2023 by a/c linked to XXXXX7890. Avl bal: Rs.25000.00. If not done by you, call 1800111222. Ignore if you've done.">
+                        Bank Credit
+                    </button>
+                    <button class="sample-btn text-sm bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        data-sender="SBIINB" 
+                        data-sms="Your a/c XX1234 is debited with Rs.2,500.00 on 15-04-2023 and a/c XX5678 credited (IMPS Ref No 123456789012). Bal: Rs.12,345.67.">
+                        Bank Debit
+                    </button>
+                    <button class="sample-btn text-sm bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        data-sender="VM-SBIINB" 
+                        data-sms="On 24/02/25 Ref 463270030555 Not You? Call 18002586161/SMS BLOCK UPI to 7308080808">
+                        Security Alert
+                    </button>
+                    <button class="sample-btn text-sm bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        data-sender="SWIGGY" 
+                        data-sms="Your payment of Rs.500.00 for Swiggy order #123456789 is successful. Order from: Burger King will be delivered by 7:45 PM.">
+                        Swiggy Order
+                    </button>
+                    <button class="sample-btn text-sm bg-gray-100 hover:bg-gray-200 py-1 px-3 rounded-full text-gray-700"
+                        data-sender="AMZN" 
+                        data-sms="Your Amazon order #123-4567890-1234567 for iPhone 13 Pro has been shipped and will be delivered on 17-Apr-2023. Track at https://amzn.in/track">
+                        Amazon Order
+                    </button>
+                    <button class="sample-btn text-sm bg-red-100 hover:bg-red-200 py-1 px-3 rounded-full text-red-700"
+                        data-sender="TX-KYCSMS" 
+                        data-sms="URGENT: Your account will be blocked. Update KYC immediately to avoid service disruption. Click here: bit.ly/upd8kyc">
+                        KYC Scam
+                    </button>
+                    <button class="sample-btn text-sm bg-red-100 hover:bg-red-200 py-1 px-3 rounded-full text-red-700"
+                        data-sender="AX-PRIZEX" 
+                        data-sms="Congratulations! You've won a prize of Rs.10,00,000 in our lucky draw. To claim your prize, click here: tinyurl.com/claim-prize">
+                        Prize Scam
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="resultContainer" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+            <h2 class="text-xl font-semibold mb-4">Parsing Results</h2>
+            
+            <div id="messageTypeContainer" class="mb-4 p-4 border rounded-lg hidden">
+                <h3 class="text-lg font-medium mb-2" id="messageTypeTitle">Message Type</h3>
+                <div id="messageTypeDescription" class="text-gray-700"></div>
+            </div>
+            
+            <div id="transactionContainer" class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Transaction Details</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-2">
+                        <span class="text-gray-600">Type:</span>
+                        <span id="transactionType" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Amount:</span>
+                        <span id="transactionAmount" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Merchant:</span>
+                        <span id="transactionMerchant" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Account:</span>
+                        <span id="transactionAccount" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Date:</span>
+                        <span id="transactionDate" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Category:</span>
+                        <span id="transactionCategory" class="font-medium ml-2">N/A</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="text-gray-600">Balance:</span>
+                        <span id="transactionBalance" class="font-medium ml-2">N/A</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="fraudContainer" class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Analysis</h3>
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="mb-2">
+                        <span class="text-gray-600">Risk Level:</span>
+                        <span id="fraudRiskLevel" class="font-medium ml-2 px-2 py-1 rounded-md">None</span>
+                    </div>
+                    <div class="mb-2" id="fraudIndicatorsContainer">
+                        <span class="text-gray-600 block mb-2">Suspicious Indicators:</span>
+                        <div id="fraudIndicators" class="flex flex-wrap"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <h3 class="text-lg font-medium mb-2">Raw Response</h3>
+                <pre id="resultOutput" class="text-sm"></pre>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const senderInput = document.getElementById('sender');
+            const smsTextArea = document.getElementById('smsText');
+            const parseBtn = document.getElementById('parseBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const resultContainer = document.getElementById('resultContainer');
+            const resultOutput = document.getElementById('resultOutput');
+            const sampleBtns = document.querySelectorAll('.sample-btn');
+            
+            // Transaction elements
+            const transactionType = document.getElementById('transactionType');
+            const transactionAmount = document.getElementById('transactionAmount');
+            const transactionMerchant = document.getElementById('transactionMerchant');
+            const transactionAccount = document.getElementById('transactionAccount');
+            const transactionDate = document.getElementById('transactionDate');
+            const transactionCategory = document.getElementById('transactionCategory');
+            const transactionBalance = document.getElementById('transactionBalance');
+            
+            // Fraud elements
+            const fraudRiskLevel = document.getElementById('fraudRiskLevel');
+            const fraudIndicators = document.getElementById('fraudIndicators');
+            const fraudIndicatorsContainer = document.getElementById('fraudIndicatorsContainer');
+            
+            // Message type elements
+            const messageTypeContainer = document.getElementById('messageTypeContainer');
+            const messageTypeTitle = document.getElementById('messageTypeTitle');
+            const messageTypeDescription = document.getElementById('messageTypeDescription');
+            
+            // Handle parse button click
+            parseBtn.addEventListener('click', async () => {
+                const sms = smsTextArea.value.trim();
+                if (!sms) {
+                    alert('Please enter an SMS message');
+                    return;
+                }
+                
+                parseBtn.disabled = true;
+                parseBtn.textContent = 'Parsing...';
+                
+                try {
+                    console.log("Sending request to:", 'http://localhost:5001/parse_sms');
+                    console.log("Request payload:", {
+                        sms_text: sms,
+                        sender: senderInput.value.trim()
+                    });
+                    
+                    const response = await fetch('http://localhost:5001/parse_sms', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            sms_text: sms,
+                            sender: senderInput.value.trim()
+                        })
+                    });
+                    
+                    console.log("Response status:", response.status);
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        console.error("Error response:", errorText);
+                        throw new Error(`Server returned ${response.status}: ${errorText}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log("Parsed data:", data);
+                    resultOutput.textContent = JSON.stringify(data, null, 2);
+                    resultContainer.classList.remove('hidden');
+                    
+                    // Update transaction details
+                    if (data.transaction) {
+                        transactionType.textContent = data.transaction.type || 'N/A';
+                        transactionAmount.textContent = data.transaction.amount ? `₹${data.transaction.amount.toLocaleString()}` : 'N/A';
+                        transactionMerchant.textContent = data.transaction.merchant || 'N/A';
+                        transactionAccount.textContent = data.transaction.account || 'N/A';
+                        transactionDate.textContent = data.transaction.date || 'N/A';
+                        transactionCategory.textContent = data.transaction.category || 'Uncategorized';
+                        transactionBalance.textContent = data.transaction.balance ? `₹${data.transaction.balance.toLocaleString()}` : 'N/A';
+                    }
+                    
+                    // Update fraud detection details
+                    if (data.fraud_detection) {
+                        // Set risk level with appropriate styling
+                        const riskLevel = data.fraud_detection.risk_level || 'none';
+                        fraudRiskLevel.textContent = riskLevel.charAt(0).toUpperCase() + riskLevel.slice(1);
+                        
+                        // Clear classes and set new one
+                        fraudRiskLevel.className = 'font-medium ml-2 px-2 py-1 rounded-md';
+                        
+                        if (riskLevel === 'low') {
+                            fraudRiskLevel.classList.add('bg-green-100', 'text-green-800');
+                        } else if (riskLevel === 'medium') {
+                            fraudRiskLevel.classList.add('bg-yellow-100', 'text-yellow-800');
+                        } else if (riskLevel === 'high') {
+                            fraudRiskLevel.classList.add('bg-red-100', 'text-red-800');
+                        } else {
+                            fraudRiskLevel.classList.add('bg-gray-100', 'text-gray-800');
+                        }
+                        
+                        // Update indicators
+                        fraudIndicators.innerHTML = '';
+                        const indicators = data.fraud_detection.suspicious_indicators || [];
+                        
+                        if (indicators.length > 0) {
+                            indicators.forEach(indicator => {
+                                const badge = document.createElement('span');
+                                badge.className = 'badge';
+                                
+                                if (riskLevel === 'low') {
+                                    badge.classList.add('badge-low');
+                                } else if (riskLevel === 'medium') {
+                                    badge.classList.add('badge-medium');
+                                } else if (riskLevel === 'high') {
+                                    badge.classList.add('badge-high');
+                                }
+                                
+                                badge.textContent = indicator;
+                                fraudIndicators.appendChild(badge);
+                            });
+                            fraudIndicatorsContainer.style.display = 'block';
+                        } else {
+                            fraudIndicatorsContainer.style.display = 'none';
+                        }
+                    }
+                    
+                    // Handle special message types
+                    if (data.metadata && data.metadata.message_type) {
+                        const messageType = data.metadata.message_type;
+                        
+                        if (messageType === 'security_alert') {
+                            messageTypeContainer.classList.remove('hidden');
+                            messageTypeContainer.classList.add('bg-yellow-50', 'border-yellow-200');
+                            messageTypeTitle.textContent = 'Security Alert';
+                            messageTypeDescription.textContent = 'This appears to be a legitimate security alert message from your bank. It may require your attention or action.';
+                        }
+                        else if (messageType === 'promotional') {
+                            messageTypeContainer.classList.remove('hidden');
+                            messageTypeContainer.classList.add('bg-blue-50', 'border-blue-200');
+                            messageTypeTitle.textContent = 'Promotional Message';
+                            messageTypeDescription.textContent = 'This appears to be a promotional message and does not contain financial transaction information.';
+                        }
+                        else if (messageType === 'balance_update') {
+                            messageTypeContainer.classList.remove('hidden');
+                            messageTypeContainer.classList.add('bg-green-50', 'border-green-200');
+                            messageTypeTitle.textContent = 'Balance Update';
+                            messageTypeDescription.textContent = 'This is a balance update notification and does not represent a new transaction.';
+                        }
+                        else {
+                            messageTypeContainer.classList.add('hidden');
+                        }
+                    } else {
+                        messageTypeContainer.classList.add('hidden');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error parsing SMS:', error);
+                    alert('Error parsing SMS: ' + error.message);
+                } finally {
+                    parseBtn.disabled = false;
+                    parseBtn.textContent = 'Parse SMS';
+                }
+            });
+            
+            // Handle clear button click
+            clearBtn.addEventListener('click', () => {
+                senderInput.value = '';
+                smsTextArea.value = '';
+                resultContainer.classList.add('hidden');
+            });
+            
+            // Handle sample message buttons
+            sampleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    senderInput.value = btn.dataset.sender;
+                    smsTextArea.value = btn.dataset.sms;
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

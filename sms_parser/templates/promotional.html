@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}SMS Parser - Promotional Analysis{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info">
+                <h5 class="card-title mb-0">Promotional SMS Analysis</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Offer Details</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Merchant:</strong>
+                                {{ result.merchant_name or 'Not specified' }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Offer Type:</strong>
+                                {{ result.offer_type or 'Not specified' }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Validity:</strong>
+                                {{ result.validity or 'Not specified' }}
+                            </li>
+                            {% if result.discount_amount %}
+                            <li class="list-group-item">
+                                <strong>Discount Amount:</strong>
+                                {{ result.discount_amount }}
+                            </li>
+                            {% endif %}
+                            {% if result.discount_percentage %}
+                            <li class="list-group-item">
+                                <strong>Discount Percentage:</strong>
+                                {{ result.discount_percentage }}%
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Additional Information</h6>
+                        {% if result.terms_conditions %}
+                        <div class="alert alert-info">
+                            <strong>Terms & Conditions:</strong>
+                            <ul class="mb-0">
+                                {% for term in result.terms_conditions %}
+                                <li>{{ term }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if result.important_dates %}
+                        <div class="alert alert-warning">
+                            <strong>Important Dates:</strong>
+                            <ul class="mb-0">
+                                {% for date in result.important_dates %}
+                                <li>{{ date }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                {% if result.recommendations %}
+                <div class="alert alert-success mt-3">
+                    <h6>Recommendations:</h6>
+                    <ul class="mb-0">
+                        {% for rec in result.recommendations %}
+                        <li>{{ rec }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Original SMS</h5>
+            </div>
+            <div class="card-body">
+                <pre class="mb-0">{{ sms_text }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

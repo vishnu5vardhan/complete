@@ -1,0 +1,17 @@
+# High-Risk SMS Messages - Created on 2025-04-07 20:54:38.894487
+
+[2025-04-07 20:56:11] RISK LEVEL: high
+SENDER: Unknown
+INDICATORS: contains_urls, suspicious_keywords, unknown_sender
+SMS: sBI Alert: Your account XXXXXX1234 has a low balance. Please recharge immediately to avoid transaction failures. Click here for quick recharge: https://sbionline.recharge-now.com
+--------------------------------------------------------------------------------
+[2025-04-07 20:57:53] RISK LEVEL: high
+SENDER: Unknown
+INDICATORS: contains_urls, suspicious_keywords, unknown_sender, prize_scam
+SMS: Congratulations! You've won a prize of Rs.10,00,000 in our lucky draw. To claim your prize, click here: tinyurl.com/claim-prize
+--------------------------------------------------------------------------------
+[2025-04-08 05:50:03] RISK LEVEL: high
+SENDER: Unknown
+INDICATORS: contains_urls, suspicious_keywords, unknown_sender, language_excessive_caps, language_aggressive_language
+SMS: SBI Alert: Your account XXXXXX1234 has a low balance. Please recharge immediately to avoid transaction failures. Click here for quick recharge: https://sbionline.recharge-now.com
+--------------------------------------------------------------------------------

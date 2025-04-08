@@ -1,0 +1,1872 @@
+2025-04-08 12:59:33,350 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 12:59:33,350 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 12:59:33,351 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,351 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,352 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 12:59:33,352 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 12:59:33,353 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,353 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,353 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 12:59:33,353 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 12:59:33,353 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,353 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 12:59:33,354 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 12:59:33,354 - sms_parser.core.database - ERROR - Error saving fraud log to database: Object of type RiskLevel is not JSON serializable
+2025-04-08 13:10:57,351 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:10:57,351 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:11:59,967 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:11:59,967 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:16,714 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:16,714 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:34,592 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:34,592 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:34,636 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.31.66:8000
+2025-04-08 13:12:34,636 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 13:12:34,637 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:12:34,901 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:34,901 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:12:34,915 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:12:34,922 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:13:51,120 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:13:51,120 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:16:02,631 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:16:02,631 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:16:02,673 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.66:5001
+2025-04-08 13:16:02,673 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 13:16:02,673 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:16:02,931 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:16:02,931 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:16:02,943 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:16:02,949 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:16:10,197 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:16:10] "GET / HTTP/1.1" 200 -
+2025-04-08 13:16:26,331 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:26,331 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:26,333 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:16:26] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:16:37,628 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:37,628 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:37,630 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:16:37] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:16:58,277 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:58,277 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:16:58,279 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:16:58] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:05,705 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:05,705 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:05,706 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:05] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:11,171 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:11,171 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:11,172 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:11] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:20,611 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:20,611 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:20,612 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:20] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:39,412 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:39,412 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:39,414 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:39] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:50,795 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:50,795 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:50,797 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:50] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:17:58,239 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:58,239 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:17:58,240 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:17:58] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:18:11,861 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:18:11,861 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:18:11,863 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:18:11] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:19:22,325 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/sms_parser/parsers/light_filter.py', reloading
+2025-04-08 13:19:22,426 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:19:22,904 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:22,904 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:22,923 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:19:22,928 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:19:35,209 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/sms_parser/parsers/gemini_parser.py', reloading
+2025-04-08 13:19:35,286 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:19:35,678 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:35,678 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:35,696 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:19:35,701 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:19:55,259 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/sms_parser/parsers/fallback_parser.py', reloading
+2025-04-08 13:19:55,336 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:19:55,725 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:55,725 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:19:55,742 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:19:55,747 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:20:21,335 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/sms_parser/parsers/fallback_parser.py', reloading
+2025-04-08 13:20:21,410 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:20:21,801 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:21,801 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:21,816 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:20:21,821 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:20:35,714 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:35,714 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:35,729 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:20:35] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:20:38,180 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:38,180 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:38,181 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:20:38] "POST /parse HTTP/1.1" 200 -
+2025-04-08 13:20:46,694 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:46,694 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:46,734 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.66:5001
+2025-04-08 13:20:46,734 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 13:20:46,735 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 13:20:46,986 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:46,986 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 13:20:47,000 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 13:20:47,008 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 13:20:48,652 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:20:48] "GET / HTTP/1.1" 200 -
+2025-04-08 13:20:51,794 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:51,794 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 13:20:51,794 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 13:20:51] "POST /parse HTTP/1.1" 200 -
+2025-04-08 15:20:11,323 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:11,323 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:11,364 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.66:5001
+2025-04-08 15:20:11,364 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:20:11,365 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:20:11,605 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:11,605 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:11,616 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:20:11,623 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:20:15,246 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 15:20:15] "GET / HTTP/1.1" 200 -
+2025-04-08 15:20:19,789 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:20:19,789 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:20:19,790 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 15:20:19] "POST /parse HTTP/1.1" 200 -
+2025-04-08 15:20:25,082 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:20:25,082 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:20:25,084 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 15:20:25] "POST /parse HTTP/1.1" 200 -
+2025-04-08 15:20:41,262 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:41,262 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:41,301 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.31.66:5001
+2025-04-08 15:20:41,301 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:20:41,301 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:20:41,540 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:41,540 - sms_parser.core.database - INFO - Database initialized successfully
+2025-04-08 15:20:41,553 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:20:41,558 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:21:07,847 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:21:07,897 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:21:07,897 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:21:07,898 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:21:10,004 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:21:10,028 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:21:10,044 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:23:34,757 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:23:34,788 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:23:34,788 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:23:34,788 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:23:37,178 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:23:37,200 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:23:37,208 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:24:16,058 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:24:16,088 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:24:16,088 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:24:16,089 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:24:18,292 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:24:18,316 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:24:18,325 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:26:02,499 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/test_gemini.py', reloading
+2025-04-08 15:26:04,636 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:26:07,201 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:26:07,227 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:26:07,235 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:32:37,715 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:32:37,750 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:32:37,750 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:32:37,751 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:32:39,657 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:32:39,684 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:32:39,694 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:33:44,481 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:33:44,516 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:33:44,516 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:33:44,517 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:33:46,502 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:33:47,239 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:33:47,259 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:34:21,150 - werkzeug - INFO - 127.0.0.1 - - [08/Apr/2025 15:34:21] "[33mPOST /parse HTTP/1.1[0m" 404 -
+2025-04-08 15:36:15,617 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:36:15,617 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:36:27,083 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:36:27,083 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:40:44,177 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:40:44,177 - sms_parser.parsers.gemini_parser - INFO - Using mock response due to missing API key or mock mode
+2025-04-08 15:42:52,588 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:42:52,615 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:42:52,615 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:42:52,616 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:42:54,101 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:42:54,122 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:42:54,162 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:44:01,098 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/app.py', reloading
+2025-04-08 15:44:03,369 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:44:05,674 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:44:05,696 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:44:05,723 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:44:22,233 - werkzeug - INFO -  * Detected change in '/Users/vishn/Desktop/llm_recommender/app.py', reloading
+2025-04-08 15:44:24,383 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:44:25,373 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:44:25,391 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:44:25,397 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:45:38,363 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:40,203 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:40,206 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:45:40,206 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:40,230 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:45:40,230 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:45:40,231 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:45:40,604 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:41,160 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:41,164 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:45:41,164 - dotenv.main - WARNING - python-dotenv could not parse statement starting at line 1
+2025-04-08 15:45:41,191 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:45:41,200 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 15:49:01,626 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:49:01,653 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5001
+2025-04-08 15:49:01,654 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-08 15:49:01,654 - werkzeug - INFO -  * Restarting with stat
+2025-04-08 15:49:03,663 - __main__ - INFO - Starting Flask app on port 5001
+2025-04-08 15:49:03,680 - werkzeug - WARNING -  * Debugger is active!
+2025-04-08 15:49:03,688 - werkzeug - INFO -  * Debugger PIN: 110-984-357
+2025-04-08 16:29:44,047 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:29:44,047 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:29:44,048 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 fraud indicators
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 fraud indicators
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:29:44,049 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:29:44,050 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:29:44,050 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:29:44,050 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:29:44,050 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 fraud indicators
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 fraud indicators
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:29:44,051 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:29:47,941 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:29:47,941 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:29:47,942 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: name 'sms_lower' is not defined. Falling back to regex parser.
+2025-04-08 16:29:47,942 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: name 'sms_lower' is not defined. Falling back to regex parser.
+2025-04-08 16:31:12,855 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:31:12,855 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:31:12,855 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:31:12,855 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:31:12,856 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:31:12,857 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:31:12,858 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:31:12,858 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:31:12,859 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:31:16,657 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:16,657 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:18,899 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:18,899 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:20,537 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:20,537 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:31:20,950 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 39
+}
+]. Falling back to regex parser.
+2025-04-08 16:31:20,950 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 39
+}
+]. Falling back to regex parser.
+2025-04-08 16:33:57,795 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:33:57,795 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:33:57,796 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:33:57,797 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:33:57,798 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:33:57,798 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:33:57,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:34:01,511 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:01,511 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:03,665 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:03,665 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:05,301 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:05,301 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:05,713 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:05,713 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:06,964 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:06,964 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:07,424 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:07,424 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:08,681 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:08,681 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:10,834 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:10,834 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:34:11,240 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:11,240 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:11,957 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]. Falling back to regex parser.
+2025-04-08 16:34:11,957 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]. Falling back to regex parser.
+2025-04-08 16:45:56,178 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:45:56,178 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:45:56,179 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:45:56,179 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:45:56,180 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:45:56,181 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:45:56,182 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:45:56,182 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:45:56,182 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:45:56,182 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:45:56,183 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:45:58,583 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:45:58,583 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:00,800 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:00,800 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:02,352 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:02,352 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:03,988 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:03,988 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:46:04,364 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:04,364 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:05,488 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:05,488 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:05,897 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:05,897 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,209 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,209 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,501 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,501 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,938 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:46:06,938 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:51:51,798 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:51:51,798 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:51:51,799 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:51:51,800 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:51:51,801 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 16:51:55,998 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:51:55,998 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:51:58,363 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:51:58,363 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:00,001 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:00,001 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:01,605 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:01,605 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:02,053 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 58
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:02,053 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 58
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:04,507 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:04,507 - sms_parser.parsers.gemini_parser - INFO - Successfully parsed SMS with Gemini API
+2025-04-08 16:52:04,916 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:04,916 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:06,046 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:06,046 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 54
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:06,453 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:06,453 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,033 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,033 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,504 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,504 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,832 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:07,832 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,148 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,148 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,500 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,500 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,911 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:08,911 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 51
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:09,233 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]. Falling back to regex parser.
+2025-04-08 16:52:09,233 - sms_parser.parsers.gemini_parser - WARNING - Error using Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]. Falling back to regex parser.
+2025-04-08 17:41:02,955 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:41:02,955 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:41:02,956 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:41:02,957 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:41:02,958 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:41:02,958 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Bank card ending wit...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Bank card ending wit...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.15000 credited to your HDFC...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.15000 credited to your HDFC...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your payment of Rs.749 to Swig...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your payment of Rs.749 to Swig...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Dear Customer, your ICICI Bank...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Dear Customer, your ICICI Bank...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your loan EMI of Rs.8,500 for ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your loan EMI of Rs.8,500 for ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Get 50% off on your next order...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Get 50% off on your next order...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: UPI-12345: Rs.500 sent to 9876...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: UPI-12345: Rs.500 sent to 9876...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: International transaction aler...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: International transaction aler...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 suc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 suc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Refund of Rs.450 has been proc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Refund of Rs.450 has been proc...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Payment of Rs.2,500 to Flipkar...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Payment of Rs.2,500 to Flipkar...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: EMI of Rs.3,500 for your Home ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: EMI of Rs.3,500 for your Home ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Mini statement - Your current ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Mini statement - Your current ...
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:02,959 - sms_parser.parsers.gemini_parser - INFO - Mock mode enabled, returning mock response
+2025-04-08 17:41:28,506 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:41:28,506 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:41:28,506 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:41:28,506 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:41:28,507 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:41:28,508 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:41:32,090 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.58 seconds
+2025-04-08 17:41:32,090 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.58 seconds
+2025-04-08 17:41:32,092 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:41:32,092 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:41:33,628 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.54 seconds
+2025-04-08 17:41:33,628 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.54 seconds
+2025-04-08 17:41:33,629 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:41:33,629 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:41:35,778 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.15 seconds
+2025-04-08 17:41:35,778 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.15 seconds
+2025-04-08 17:41:35,780 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:41:35,780 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:41:36,190 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-04-08 17:41:36,190 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-04-08 17:42:12,406 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:42:12,406 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:42:12,406 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:42:12,406 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:42:12,407 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:42:12,408 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:42:12,409 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:42:12,409 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:42:14,383 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.97 seconds
+2025-04-08 17:42:14,383 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.97 seconds
+2025-04-08 17:42:14,384 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:42:14,384 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:42:14,689 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 45
+}
+]
+2025-04-08 17:42:14,689 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 45
+}
+]
+2025-04-08 17:42:14,690 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:42:14,690 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:42:15,819 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+2025-04-08 17:42:15,819 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 44
+}
+]
+2025-04-08 17:42:15,819 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:42:15,819 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:42:16,132 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2025-04-08 17:42:16,132 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2025-04-08 17:42:59,397 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:42:59,397 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:42:59,398 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:42:59,399 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:42:59,400 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:42:59,400 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:42:59,400 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:42:59,400 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:42:59,401 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:42:59,401 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:43:02,907 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.51 seconds
+2025-04-08 17:43:02,907 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.51 seconds
+2025-04-08 17:43:02,908 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:43:02,908 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:43:04,866 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.96 seconds
+2025-04-08 17:43:04,866 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.96 seconds
+2025-04-08 17:43:04,867 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:43:04,867 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:43:06,914 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.05 seconds
+2025-04-08 17:43:06,914 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.05 seconds
+2025-04-08 17:43:06,915 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:43:06,915 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:43:07,255 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2025-04-08 17:43:07,255 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:43:50,557 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:43:50,558 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:43:50,559 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 17:43:50,560 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:43:50,560 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 17:43:53,917 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.36 seconds
+2025-04-08 17:43:53,917 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.36 seconds
+2025-04-08 17:43:53,918 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:43:53,918 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 17:43:55,451 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.53 seconds
+2025-04-08 17:43:55,451 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.53 seconds
+2025-04-08 17:43:55,452 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:43:55,452 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 17:43:57,528 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.08 seconds
+2025-04-08 17:43:57,528 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.08 seconds
+2025-04-08 17:43:57,529 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:43:57,529 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 17:43:57,838 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+2025-04-08 17:43:57,838 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+2025-04-08 18:08:41,984 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:08:41,984 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:08:41,984 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:08:41,984 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:08:41,985 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:08:41,986 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:08:41,987 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:08:41,987 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:08:45,593 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.61 seconds
+2025-04-08 18:08:45,593 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.61 seconds
+2025-04-08 18:08:45,594 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:08:45,594 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:08:47,335 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.74 seconds
+2025-04-08 18:08:47,335 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.74 seconds
+2025-04-08 18:08:47,335 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:08:47,335 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:08:49,485 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.15 seconds
+2025-04-08 18:08:49,485 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.15 seconds
+2025-04-08 18:08:49,485 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:08:49,485 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:08:51,431 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.95 seconds
+2025-04-08 18:08:51,431 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.95 seconds
+2025-04-08 18:08:51,431 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:08:51,431 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:08:53,377 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.95 seconds
+2025-04-08 18:08:53,377 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.95 seconds
+2025-04-08 18:08:53,378 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:08:53,378 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:08:53,791 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-04-08 18:08:53,791 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+2025-04-08 18:08:53,792 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:08:53,792 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:08:54,914 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+2025-04-08 18:08:54,914 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+2025-04-08 18:08:54,914 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:08:54,914 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:08:55,322 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 4
+}
+]
+2025-04-08 18:08:55,322 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 4
+}
+]
+2025-04-08 18:08:55,322 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:08:55,322 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:08:56,340 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:08:56,340 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:09:37,738 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:09:37,739 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:09:37,740 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:09:37,740 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:09:39,460 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-04-08 18:09:39,460 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-04-08 18:09:39,462 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:09:39,462 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:09:39,866 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-04-08 18:09:39,866 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-04-08 18:09:39,866 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:09:39,866 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:09:40,891 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+2025-04-08 18:09:40,891 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 19
+}
+]
+2025-04-08 18:09:40,891 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:09:40,891 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:09:41,300 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-04-08 18:09:41,300 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-04-08 18:09:41,300 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:09:41,300 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:09:42,325 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:09:42,325 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:09:42,325 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:09:42,325 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:09:42,734 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:09:42,734 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:09:42,736 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:09:42,736 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:09:43,759 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 16
+}
+]
+2025-04-08 18:09:43,759 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 16
+}
+]
+2025-04-08 18:09:43,759 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:09:43,759 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:09:45,703 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:09:45,703 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:09:45,705 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:09:45,705 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:09:47,649 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:09:47,649 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:10:38,474 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:10:38,474 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:10:38,474 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:10:38,474 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:10:38,475 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:10:38,476 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:10:38,476 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:10:38,476 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:10:38,476 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:10:38,477 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:10:38,477 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:10:40,854 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.38 seconds
+2025-04-08 18:10:40,854 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.38 seconds
+2025-04-08 18:10:40,856 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:10:40,856 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:10:42,321 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.47 seconds
+2025-04-08 18:10:42,321 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.47 seconds
+2025-04-08 18:10:42,322 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:10:42,322 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:10:42,615 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:10:42,615 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-04-08 18:10:42,618 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:10:42,618 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:10:45,403 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.79 seconds
+2025-04-08 18:10:45,403 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.79 seconds
+2025-04-08 18:10:45,404 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:10:45,404 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:10:47,349 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:10:47,349 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.94 seconds
+2025-04-08 18:10:47,350 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:10:47,350 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:10:49,397 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.05 seconds
+2025-04-08 18:10:49,397 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.05 seconds
+2025-04-08 18:10:49,397 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:10:49,397 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:10:51,353 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.96 seconds
+2025-04-08 18:10:51,353 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.96 seconds
+2025-04-08 18:10:51,353 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:10:51,353 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:10:51,728 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+2025-04-08 18:10:51,728 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 8
+}
+]
+2025-04-08 18:10:51,729 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:10:51,729 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:10:54,373 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.64 seconds
+2025-04-08 18:10:54,373 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.64 seconds
+2025-04-08 18:11:47,423 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:11:47,423 - sms_parser.parsers.gemini_parser - INFO - Gemini API configured successfully with model: gemini-1.5-pro
+2025-04-08 18:11:47,423 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:11:47,423 - sms_parser.parsers.gemini_parser - INFO - Loaded 91 merchants from main file
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded additional merchants from short file
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 46 banks
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 39 transaction types
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 56 transaction indicators
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 55 fraud indicators
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:11:47,424 - sms_parser.parsers.gemini_parser - INFO - Loaded 43 transaction status keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 balance update keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 21 bill statement keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:11:47,425 - sms_parser.parsers.gemini_parser - INFO - Loaded 20 EMI keywords
+2025-04-08 18:11:47,426 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:11:47,426 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your HDFC Credit Card bill of ...
+2025-04-08 18:11:50,967 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.54 seconds
+2025-04-08 18:11:50,967 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 3.54 seconds
+2025-04-08 18:11:50,968 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:11:50,968 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Your electricity bill payment ...
+2025-04-08 18:11:52,459 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.49 seconds
+2025-04-08 18:11:52,459 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 1.49 seconds
+2025-04-08 18:11:52,459 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:11:52,459 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,299 debited from your acc...
+2025-04-08 18:11:54,541 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.08 seconds
+2025-04-08 18:11:54,541 - sms_parser.parsers.gemini_parser - INFO - Gemini API call took 2.08 seconds
+2025-04-08 18:11:54,541 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:11:54,541 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: NEFT transfer of Rs.25,000 to ...
+2025-04-08 18:11:54,891 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+2025-04-08 18:11:54,891 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 5
+}
+]
+2025-04-08 18:11:54,893 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:11:54,893 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.999 debited from your accou...
+2025-04-08 18:11:56,263 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:11:56,263 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:11:56,264 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:11:56,264 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,499 debited from your acc...
+2025-04-08 18:11:56,609 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:11:56,609 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-04-08 18:11:56,610 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:11:56,610 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.5,000 debited from your acc...
+2025-04-08 18:11:57,901 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+2025-04-08 18:11:57,901 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 2
+}
+]
+2025-04-08 18:11:57,901 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:11:57,901 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.2,500 debited from your acc...
+2025-04-08 18:11:58,314 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-04-08 18:11:58,314 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-04-08 18:11:58,314 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:11:58,314 - sms_parser.parsers.gemini_parser - INFO - Parsing SMS: Rs.1,199 debited from your acc...
+2025-04-08 18:11:59,027 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-04-08 18:11:59,027 - sms_parser.parsers.gemini_parser - ERROR - Error calling Gemini API: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
